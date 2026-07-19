@@ -62,7 +62,6 @@ p { color: var(--muted); line-height: 1.58; }
   align-items: center;
   gap: 12px;
 }
-}
 
 .desktop-nav {
   margin-left: auto;
