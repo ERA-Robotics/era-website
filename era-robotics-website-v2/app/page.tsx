@@ -171,16 +171,53 @@ export default function Home() {
   </div>
 </section>
 
-      <section className="section">
-        <div className="shell">
-          <p className="kicker">WHAT WE BUILD</p>
-          <h2>Solutions for intelligent operations.</h2>
-          <p className="section-copy">
-            One partner for robotics, Physical AI, edge computing, vision systems and enterprise integration.
-          </p>
-          <CardGrid items={solutions} columns={3} />
-        </div>
-      </section>
+<section className="section solutions-section">
+  <div className="shell">
+    <div className="section-heading-row">
+      <div>
+        <p className="kicker">WHAT WE BUILD</p>
+        <h2>Five capabilities. One integrated platform.</h2>
+      </div>
+
+      <p className="section-copy">
+        ERA brings together robotics, Physical AI, edge computing, computer
+        vision and enterprise integration to build intelligent operational
+        systems.
+      </p>
+    </div>
+
+    <div className="solutions-grid">
+      {solutions.map((solution, index) => (
+        <Link
+          href={solution.href}
+          className={`solution-card solution-card-${index + 1}`}
+          key={solution.title}
+        >
+          <div className="solution-card-top">
+            <span className="solution-number">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+
+            <span className="solution-arrow" aria-hidden="true">
+              ↗
+            </span>
+          </div>
+
+          <div className="solution-visual" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div className="solution-card-copy">
+            <h3>{solution.title}</h3>
+            <p>{solution.body}</p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section className="section section-alt">
         <div className="shell">
