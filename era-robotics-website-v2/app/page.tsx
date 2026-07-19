@@ -283,39 +283,148 @@ export default function Home() {
   </div>
 </section>
 
-      <section className="section physical-ai-section">
-        <div className="shell">
-          <p className="kicker">OUR DIRECTION</p>
-          <h2>From autonomous machines to Physical AI.</h2>
-          <p className="section-copy wide">
-            ERA connects robotics, machine perception, edge intelligence and enterprise workflows—turning isolated machines into intelligent operational systems.
-          </p>
+    <section className="section physical-ai-section">
+  <div className="shell">
+    <div className="physical-ai-heading">
+      <div>
+        <p className="kicker">PHYSICAL AI PLATFORM</p>
+        <h2>
+          Connecting machines, intelligence and enterprise operations.
+        </h2>
+      </div>
 
-          <div className="platform-map">
-            <div className="node">Robotics</div>
-            <div className="connector"></div>
-            <div className="node featured">ERA Integration Layer</div>
-            <div className="connector"></div>
-            <div className="node">Enterprise Systems</div>
-          </div>
+      <div>
+        <p className="section-copy">
+          ERA brings together autonomous machines, machine perception, edge
+          inference and enterprise workflows through one integration layer.
+        </p>
 
-          <div className="pillars">
-            <article>
-              <h3>Robotics</h3>
-              <p>Commercial robotic systems for real-world operations.</p>
-            </article>
-            <article>
-              <h3>Physical AI</h3>
-              <p>Perception, spatial intelligence and autonomous decision-making.</p>
-            </article>
-            <article>
-              <h3>Enterprise Integration</h3>
-              <p>Connected workflows, data and business systems.</p>
-            </article>
+        <Link href="/solutions#physical-ai" className="text-link">
+          Explore Physical AI
+          <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
+    </div>
+
+    <div className="era-platform">
+      <div className="platform-column platform-inputs">
+        <p className="platform-label">PHYSICAL SYSTEMS</p>
+
+        <div className="platform-module">
+          <span>01</span>
+          <div>
+            <h3>Commercial Robotics</h3>
+            <p>Cleaning, delivery, logistics and service robots.</p>
           </div>
         </div>
-      </section>
 
+        <div className="platform-module">
+          <span>02</span>
+          <div>
+            <h3>Vision & Sensors</h3>
+            <p>Cameras, perception systems and environmental data.</p>
+          </div>
+        </div>
+
+        <div className="platform-module">
+          <span>03</span>
+          <div>
+            <h3>Operational Data</h3>
+            <p>Site conditions, workflows and machine telemetry.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="platform-core">
+        <div className="core-orbit core-orbit-one" aria-hidden="true"></div>
+        <div className="core-orbit core-orbit-two" aria-hidden="true"></div>
+        <div className="core-glow" aria-hidden="true"></div>
+
+        <div className="core-content">
+          <span className="core-kicker">ERA</span>
+          <h3>Integration Layer</h3>
+          <p>
+            The intelligence and orchestration layer connecting physical
+            systems with enterprise workflows.
+          </p>
+
+          <div className="core-capabilities">
+            <span>Edge AI</span>
+            <span>Fleet Intelligence</span>
+            <span>Computer Vision</span>
+            <span>Workflow Automation</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="platform-column platform-outputs">
+        <p className="platform-label">ENTERPRISE OUTCOMES</p>
+
+        <div className="platform-module">
+          <span>04</span>
+          <div>
+            <h3>Enterprise Systems</h3>
+            <p>Connected workflows, platforms and operational tools.</p>
+          </div>
+        </div>
+
+        <div className="platform-module">
+          <span>05</span>
+          <div>
+            <h3>Fleet Management</h3>
+            <p>Monitoring, orchestration and multi-site visibility.</p>
+          </div>
+        </div>
+
+        <div className="platform-module">
+          <span>06</span>
+          <div>
+            <h3>Operational Intelligence</h3>
+            <p>Insights that support better decisions and performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="physical-ai-pillars">
+      <article>
+        <span>01</span>
+        <h3>Perceive</h3>
+        <p>
+          Machines understand environments through sensors, vision and
+          operational data.
+        </p>
+      </article>
+
+      <article>
+        <span>02</span>
+        <h3>Decide</h3>
+        <p>
+          Edge intelligence enables responsive decision-making close to the
+          physical operation.
+        </p>
+      </article>
+
+      <article>
+        <span>03</span>
+        <h3>Act</h3>
+        <p>
+          Robotics and connected systems execute workflows in real operating
+          environments.
+        </p>
+      </article>
+
+      <article>
+        <span>04</span>
+        <h3>Improve</h3>
+        <p>
+          Data and enterprise integration create continuous operational
+          improvement.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
       <section className="section">
         <div className="shell">
           <p className="kicker">PROOF IN THE FIELD</p>
