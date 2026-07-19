@@ -112,20 +112,64 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section trusted">
-        <div className="shell">
-          <p className="kicker">ENTERPRISE EXPERIENCE</p>
-          <h2>Trusted across real operating environments in Australia and New Zealand.</h2>
-          <div className="logo-cloud">
-            {["Coles", "Kmart", "Konica Minolta", "Officeworks", "ISS", "GJK"].map((name) => (
-              <span key={name}>{name}</span>
-            ))}
-          </div>
-          <p className="legal-note">
-            Representative market experience. Publication of specific customer relationships and logos is subject to written approval.
-          </p>
-        </div>
-      </section>
+<section className="section trusted">
+  <div className="shell">
+    <p className="kicker">ENTERPRISE EXPERIENCE</p>
+
+    <h2>
+      Proven in complex, real-world operating environments.
+    </h2>
+
+    <p className="section-copy wide">
+      ERA Robotics supports commercial automation projects from initial site
+      assessment through deployment, integration, training and ongoing
+      lifecycle support across Australia and New Zealand.
+    </p>
+
+    <div className="experience-grid">
+      <article>
+        <span className="experience-number">AU + NZ</span>
+        <h3>Regional capability</h3>
+        <p>
+          Local deployment and support for enterprise operations across
+          Australia and New Zealand.
+        </p>
+      </article>
+
+      <article>
+        <span className="experience-number">Multi-site</span>
+        <h3>Scalable deployment</h3>
+        <p>
+          Structured rollout processes designed for single locations and
+          distributed enterprise portfolios.
+        </p>
+      </article>
+
+      <article>
+        <span className="experience-number">End-to-end</span>
+        <h3>Lifecycle delivery</h3>
+        <p>
+          Site assessment, solution design, commissioning, training,
+          integration and ongoing support.
+        </p>
+      </article>
+
+      <article>
+        <span className="experience-number">Cross-sector</span>
+        <h3>Operational experience</h3>
+        <p>
+          Practical experience across retail, facilities, hospitality,
+          logistics and commercial environments.
+        </p>
+      </article>
+    </div>
+
+    <p className="legal-note">
+      Selected project details and customer references are available through
+      private consultation, subject to confidentiality obligations.
+    </p>
+  </div>
+</section>
 
       <section className="section">
         <div className="shell">
