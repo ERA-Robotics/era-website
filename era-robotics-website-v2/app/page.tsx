@@ -621,13 +621,123 @@ export default function Home() {
   </div>
 </section>
 
-      <section className="section">
-        <div className="shell">
-          <p className="kicker">LATEST INSIGHTS</p>
-          <h2>Ideas shaping intelligent automation.</h2>
-          <CardGrid items={insights} columns={3} />
+<section className="section resources-section">
+  <div className="shell">
+
+    <div className="section-heading-row">
+      <div>
+        <p className="kicker">RESOURCES</p>
+
+        <h2>
+          Insights for deploying robotics in the real world.
+        </h2>
+      </div>
+
+      <p className="section-copy">
+        Practical guidance on automation strategy, site readiness,
+        enterprise deployment and the evolution toward Physical AI.
+      </p>
+    </div>
+
+    <div className="resources-grid">
+
+      <Link
+        href="/resources/deployment-guide"
+        className="resource-card resource-large"
+      >
+        <div className="resource-top">
+          <span>GUIDE</span>
+          <span>01</span>
         </div>
-      </section>
+
+        <div className="resource-pattern" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div className="resource-content">
+          <p className="resource-category">
+            DEPLOYMENT GUIDE
+          </p>
+
+          <h3>
+            Preparing commercial facilities for autonomous robotics.
+          </h3>
+
+          <p>
+            Site readiness, infrastructure, workflows, safety
+            considerations and successful enterprise deployment.
+          </p>
+        </div>
+
+        <span className="resource-arrow">↗</span>
+      </Link>
+
+      <Link
+        href="/resources/industry-brief"
+        className="resource-card"
+      >
+        <div className="resource-top">
+          <span>BRIEF</span>
+          <span>02</span>
+        </div>
+
+        <div className="resource-content">
+          <p className="resource-category">
+            INDUSTRY INSIGHT
+          </p>
+
+          <h3>
+            Choosing the right robotics platform for enterprise operations.
+          </h3>
+
+          <p>
+            Evaluation criteria beyond hardware specifications.
+          </p>
+        </div>
+
+        <span className="resource-arrow">↗</span>
+      </Link>
+
+      <Link
+        href="/resources/physical-ai"
+        className="resource-card"
+      >
+        <div className="resource-top">
+          <span>ARTICLE</span>
+          <span>03</span>
+        </div>
+
+        <div className="resource-content">
+          <p className="resource-category">
+            PHYSICAL AI
+          </p>
+
+          <h3>
+            From commercial robotics to intelligent physical systems.
+          </h3>
+
+          <p>
+            Understanding the next evolution of enterprise automation.
+          </p>
+        </div>
+
+        <span className="resource-arrow">↗</span>
+      </Link>
+
+    </div>
+
+    <div className="resources-footer">
+      <Link href="/resources" className="text-link">
+        Explore all resources
+        <span>↗</span>
+      </Link>
+    </div>
+
+  </div>
+</section>
+      
     </main>
   );
 }
