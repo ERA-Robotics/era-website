@@ -84,12 +84,19 @@ export default function Home() {
   return (
     <main>
       <section className="hero">
-        <div className="hero-art" aria-hidden="true">
-          {Array.from({ length: 20 }).map((_, index) => (
-            <span key={index}></span>
-          ))}
-        </div>
-        <div className="hero-shade"></div>
+        <video
+  className="hero-video"
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="metadata"
+  aria-hidden="true"
+>
+  <source src="/hero-video.mp4" type="video/mp4" />
+</video>
+
+<div className="hero-shade" aria-hidden="true"></div>
         <div className="shell hero-content">
           <p className="kicker">ROBOTICS · PHYSICAL AI · EDGE INTELLIGENCE</p>
           <h1>Engineering Intelligence for the Physical World.</h1>
