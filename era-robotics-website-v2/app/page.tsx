@@ -219,24 +219,69 @@ export default function Home() {
   </div>
 </section>
 
-      <section className="section section-alt">
-        <div className="shell">
-          <p className="kicker">INDUSTRIES</p>
-          <h2>Automation designed around the environment.</h2>
-          <p className="section-copy">
-            Technology creates value only when it fits the site, the workflow and the people using it.
-          </p>
-          <div className="industry-grid">
-            {industries.map(([title, body]) => (
-              <Link href="/industries" className="industry-card" key={title}>
-                <div className="industry-visual"><span></span></div>
-                <h3>{title}</h3>
-                <p>{body}</p>
-              </Link>
-            ))}
-          </div>
+<section className="section section-alt industries-section">
+  <div className="shell">
+    <div className="section-heading-row">
+      <div>
+        <p className="kicker">INDUSTRIES</p>
+        <h2>Automation shaped around real operating environments.</h2>
+      </div>
+
+      <p className="section-copy">
+        Every industry has different workflows, risks, service expectations and
+        physical constraints. ERA designs automation around the environment,
+        rather than forcing the environment around the technology.
+      </p>
+    </div>
+
+    <div className="industries-layout">
+      <Link href="/industries#retail" className="industry-feature">
+        <div className="industry-feature-visual" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </section>
+
+        <div className="industry-feature-top">
+          <span className="industry-index">01</span>
+          <span className="industry-arrow">↗</span>
+        </div>
+
+        <div className="industry-feature-copy">
+          <p className="industry-label">FEATURED INDUSTRY</p>
+          <h3>Retail</h3>
+          <p>
+            Autonomous cleaning, customer-facing robotics and operational
+            intelligence for complex, high-traffic environments.
+          </p>
+        </div>
+      </Link>
+
+      <div className="industry-list">
+        {industries.slice(1).map(([title, body], index) => (
+          <Link
+            href={`/industries#${title.toLowerCase().replaceAll(" ", "-")}`}
+            className="industry-list-item"
+            key={title}
+          >
+            <span className="industry-index">
+              {String(index + 2).padStart(2, "0")}
+            </span>
+
+            <div>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </div>
+
+            <span className="industry-arrow" aria-hidden="true">
+              ↗
+            </span>
+          </Link>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="section physical-ai-section">
         <div className="shell">
