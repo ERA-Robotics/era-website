@@ -533,30 +533,93 @@ export default function Home() {
   </div>
 </section>
 
-      <section className="section section-alt">
-        <div className="shell why-grid">
+<section className="section section-alt why-era-section">
+  <div className="shell">
+    <div className="why-era-layout">
+      <div className="why-era-intro">
+        <p className="kicker">WHY ERA</p>
+
+        <h2>
+          Technology alone does not deliver operational value.
+        </h2>
+
+        <p className="why-era-lead">
+          Deployment does. Integration does. Support does.
+        </p>
+
+        <p className="section-copy">
+          ERA Robotics approaches automation as an operational system—not a
+          standalone machine. We design around the site, workflow, people and
+          enterprise environment.
+        </p>
+
+        <Link href="/about" className="text-link">
+          Learn about ERA
+          <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
+
+      <div className="why-era-list">
+        <article>
+          <span className="why-era-number">01</span>
+
           <div>
-            <p className="kicker">WHY ERA</p>
-            <h2>Built for enterprise deployment—not just demonstrations.</h2>
+            <h3>Enterprise-first</h3>
+            <p>
+              We begin with the operating workflow, business requirements and
+              site constraints before selecting the technology.
+            </p>
           </div>
-          <div className="why-list">
-            {[
-              ["01", "Local capability", "Deployment, training and support across Australia and New Zealand."],
-              ["02", "Integration mindset", "Robotics connected to workflows, data and enterprise systems."],
-              ["03", "Multi-industry experience", "Practical experience across retail, facilities, hospitality and logistics."],
-              ["04", "AI-forward direction", "A clear pathway from robotics deployment to edge AI and Physical AI."]
-            ].map(([number, title, body]) => (
-              <article key={title}>
-                <span>{number}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-              </article>
-            ))}
+        </article>
+
+        <article>
+          <span className="why-era-number">02</span>
+
+          <div>
+            <h3>Integration-led</h3>
+            <p>
+              Robotics must connect with people, processes, data and enterprise
+              systems to create sustainable value.
+            </p>
           </div>
-        </div>
-      </section>
+        </article>
+
+        <article>
+          <span className="why-era-number">03</span>
+
+          <div>
+            <h3>Local deployment capability</h3>
+            <p>
+              Site assessment, commissioning, training and lifecycle support
+              across Australia and New Zealand.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span className="why-era-number">04</span>
+
+          <div>
+            <h3>Future-ready architecture</h3>
+            <p>
+              Solutions designed to evolve from commercial robotics toward
+              edge intelligence and Physical AI.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div className="why-era-statement">
+      <span>ERA DIRECTION</span>
+
+      <p>
+        ERA Robotics is building the bridge between today&apos;s commercial
+        robotics and tomorrow&apos;s Physical AI infrastructure.
+      </p>
+    </div>
+  </div>
+</section>
 
       <section className="section">
         <div className="shell">
