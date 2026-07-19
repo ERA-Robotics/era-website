@@ -41,3 +41,4 @@ This is the upgraded Next.js version based on the current ERA Robotics Framer vi
 - Replace generic case-study wording with verified facts and metrics.
 - Connect the contact form to HubSpot, Formspree, Resend or another production form service.
 - Add Privacy Policy and Terms pages.
+- Deployment configuration updated.
