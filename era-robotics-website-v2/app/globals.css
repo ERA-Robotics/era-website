@@ -62,26 +62,7 @@ p { color: var(--muted); line-height: 1.58; }
   align-items: center;
   gap: 12px;
 }
-.logo-symbol {
-  width: 42px;
-  display: grid;
-  gap: 4px;
 }
-.logo-symbol i {
-  display: block;
-  height: 5px;
-  background: currentColor;
-}
-.logo-symbol i:nth-child(2) { width: 82%; }
-.logo-symbol i:nth-child(3) { width: 64%; }
-.logo-copy {
-  display: flex;
-  gap: 5px;
-  align-items: baseline;
-  letter-spacing: .18em;
-}
-.logo-copy b { font-size: .9rem; }
-.logo-copy small { font-size: .66rem; }
 
 .desktop-nav {
   margin-left: auto;
@@ -492,4 +473,9 @@ p { color: var(--muted); line-height: 1.58; }
       radial-gradient(circle at 20% 70%, #31171b, transparent 45%),
       #050607;
   }
+}
+.logo-image{
+    display:block;
+    width:190px;
+    height:auto;
 }
