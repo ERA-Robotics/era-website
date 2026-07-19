@@ -908,3 +908,18 @@ p { color: var(--muted); line-height: 1.58; }
     padding: 22px;
   }
 }
+.hero {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none;
+}
+
+.hero-video {
+  border: none;
+  outline: none;
+}
+
+main {
+  border: none;
+  outline: none;
+}
