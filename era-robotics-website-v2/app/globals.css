@@ -1721,3 +1721,136 @@ main {
     flex-direction: column;
   }
 }
+/* ===== Why ERA ===== */
+
+.why-era-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.why-era-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 110px;
+  align-items: start;
+}
+
+.why-era-intro {
+  position: sticky;
+  top: 130px;
+}
+
+.why-era-intro h2 {
+  max-width: 680px;
+  margin-bottom: 24px;
+}
+
+.why-era-lead {
+  max-width: 620px;
+  margin: 0 0 22px;
+  font-size: clamp(1.35rem, 2vw, 2.05rem);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.why-era-intro .section-copy {
+  max-width: 650px;
+  margin-bottom: 30px;
+}
+
+.why-era-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.why-era-list article {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 28px;
+  min-height: 190px;
+  padding: 34px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.why-era-number {
+  padding-top: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.why-era-list h3 {
+  margin: 0 0 14px;
+  font-size: clamp(1.65rem, 2.4vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.why-era-list p {
+  max-width: 650px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.why-era-statement {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 50px;
+  align-items: start;
+  margin-top: 96px;
+  padding-top: 38px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.why-era-statement > span {
+  padding-top: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.why-era-statement p {
+  max-width: 1050px;
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+@media (max-width: 1000px) {
+  .why-era-layout {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .why-era-intro {
+    position: static;
+  }
+
+  .why-era-statement {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .why-era-list article {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 18px;
+    min-height: auto;
+    padding: 28px 0;
+  }
+
+  .why-era-statement {
+    margin-top: 64px;
+  }
+
+  .why-era-statement p {
+    font-size: 2.3rem;
+  }
+}
