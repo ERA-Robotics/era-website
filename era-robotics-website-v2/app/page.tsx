@@ -425,16 +425,113 @@ export default function Home() {
     </div>
   </div>
 </section>
-      <section className="section">
-        <div className="shell">
-          <p className="kicker">PROOF IN THE FIELD</p>
-          <h2>Featured case studies.</h2>
-          <p className="section-copy">
-            Commercial deployments and pilots designed around measurable operational outcomes.
-          </p>
-          <CardGrid items={cases} columns={3} />
+      
+      <section className="section case-study-section">
+  <div className="shell">
+    <div className="section-heading-row">
+      <div>
+        <p className="kicker">PROOF IN THE FIELD</p>
+        <h2>Real-world deployments, without exposing client intelligence.</h2>
+      </div>
+
+      <p className="section-copy">
+        Selected project examples are presented by operating environment and
+        solution type. Detailed customer references are available privately,
+        subject to confidentiality requirements.
+      </p>
+    </div>
+
+    <div className="case-study-grid">
+      <Link href="/case-studies#retail" className="case-study-card case-study-feature">
+        <div className="case-study-top">
+          <span>01</span>
+          <span>RETAIL</span>
         </div>
-      </section>
+
+        <div className="case-study-visual" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div className="case-study-copy">
+          <p className="case-study-label">MULTI-SITE AUTOMATION</p>
+          <h3>Autonomous cleaning for large-format retail environments.</h3>
+          <p>
+            Site assessment, deployment planning, commissioning, staff
+            training and ongoing support for high-traffic commercial spaces.
+          </p>
+
+          <div className="case-study-tags">
+            <span>Commercial Robotics</span>
+            <span>Multi-site Rollout</span>
+            <span>Lifecycle Support</span>
+          </div>
+        </div>
+
+        <span className="case-study-arrow" aria-hidden="true">↗</span>
+      </Link>
+
+      <Link href="/case-studies#logistics" className="case-study-card">
+        <div className="case-study-top">
+          <span>02</span>
+          <span>LOGISTICS</span>
+        </div>
+
+        <div className="case-study-copy">
+          <p className="case-study-label">WORKFLOW AUTOMATION</p>
+          <h3>Robotics supporting movement and operational workflows.</h3>
+          <p>
+            Automation designed around site traffic, task sequencing,
+            operational constraints and enterprise deployment requirements.
+          </p>
+
+          <div className="case-study-tags">
+            <span>Autonomous Systems</span>
+            <span>Workflow Design</span>
+          </div>
+        </div>
+
+        <span className="case-study-arrow" aria-hidden="true">↗</span>
+      </Link>
+
+      <Link href="/case-studies#hospitality" className="case-study-card">
+        <div className="case-study-top">
+          <span>03</span>
+          <span>HOSPITALITY</span>
+        </div>
+
+        <div className="case-study-copy">
+          <p className="case-study-label">SERVICE OPERATIONS</p>
+          <h3>Service robotics for guest-facing and back-of-house tasks.</h3>
+          <p>
+            Deployment focused on reliability, staff adoption, guest
+            experience and repeatable day-to-day operation.
+          </p>
+
+          <div className="case-study-tags">
+            <span>Service Robotics</span>
+            <span>Training</span>
+          </div>
+        </div>
+
+        <span className="case-study-arrow" aria-hidden="true">↗</span>
+      </Link>
+    </div>
+
+    <div className="case-study-footer">
+      <p>
+        Customer identities, site details and commercial outcomes are shared
+        only where disclosure has been approved.
+      </p>
+
+      <Link href="/case-studies" className="text-link">
+        View project experience
+        <span aria-hidden="true">↗</span>
+      </Link>
+    </div>
+  </div>
+</section>
 
       <section className="section section-alt">
         <div className="shell why-grid">
