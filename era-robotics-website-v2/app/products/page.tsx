@@ -794,7 +794,7 @@ export default function ProductsPage() {
           <div className="intelligence-dashboard">
             <div className="intelligence-dashboard-frame">
               <img
-                src="/images/era-intelligence-dashboard.png"
+                src="/era-intelligence-dashboard.png"
                 alt="ERA Intelligence Platform displaying robot locations, cleaning task replay, operational analytics and fleet status"
               />
             </div>
