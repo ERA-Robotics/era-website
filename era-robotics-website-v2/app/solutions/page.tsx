@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 
+export const metadata: Metadata = {
+  title: "Enterprise Robotics & Physical AI Solutions | ERA Robotics",
+  description:
+    "Explore ERA Robotics solutions across commercial robotics, Physical AI, edge computing, AI vision and enterprise integration for Australia and New Zealand.",
+};
 const rows = [
   {
     id: "commercial-robotics",
@@ -96,12 +102,22 @@ export default function SolutionsPage() {
   return (
     <main>
       <PageHero
-        kicker="SOLUTIONS"
-        title="Intelligent systems for real-world operations."
-        description="ERA Robotics combines robotics, edge AI, computer vision and integration services into practical enterprise solutions."
-      />
+  kicker="SOLUTIONS"
+  title="Intelligent systems for real-world operations."
+  description="ERA Robotics combines robotics, edge AI, computer vision and integration services into practical enterprise solutions."
+/>
 
-      <section className="section">
+<nav className="solutions-subnav" aria-label="Solutions page navigation">
+  <div className="shell solutions-subnav-inner">
+    <a href="#commercial-robotics">Commercial Robotics</a>
+    <a href="#physical-ai">Physical AI</a>
+    <a href="#edge-ai">Edge Computing</a>
+    <a href="#ai-vision">AI Vision</a>
+    <a href="#integration">Integration Services</a>
+  </div>
+</nav>
+
+<section className="section">
         <div className="shell solution-table">
           {rows.map((row, index) => (
             <article id={row.id} className="solution-row" key={row.title}>
