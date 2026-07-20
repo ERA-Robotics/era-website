@@ -214,39 +214,39 @@ export default function IndustriesPage() {
                 </div>
               </div>
 
-              <div className="industry-detail-body">
-                <p className="industry-detail-lead">{industry.body}</p>
+<div className="industry-detail-body">
+  <p className="industry-detail-lead">{industry.body}</p>
 
-                <div className="industry-detail-columns">
-                  <div>
-                    <h3>Operational priorities</h3>
+  <div className="industry-detail-columns">
+    <div>
+      <h3>Operational priorities</h3>
 
-                    <ul>
-                      {industry.priorities.map((priority) => (
-                        <li key={priority}>{priority}</li>
-                      ))}
-                    </ul>
-                  </div>
+      <ul>
+        {industry.priorities.map((priority) => (
+          <li key={priority}>{priority}</li>
+        ))}
+      </ul>
+    </div>
 
-                  <div>
-                    <h3>ERA capabilities</h3>
+    <div>
+      <h3>ERA capabilities</h3>
 
-                    <ul>
-                      {industry.capabilities.map((capability) => (
-                        <li key={capability}>{capability}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
+      <ul>
+        {industry.capabilities.map((capability) => (
+          <li key={capability}>{capability}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
 
-              <Link
-                href={`/contact?industry=${industry.id}`}
-                className="industry-detail-link"
-              >
-                Discuss {industry.title}
-                <span aria-hidden="true">↗</span>
-              </Link>
+  <Link
+    href={`/contact?industry=${industry.id}`}
+    className="industry-detail-link"
+  >
+    Discuss {industry.title}
+    <span aria-hidden="true">↗</span>
+  </Link>
+</div>
             </article>
           ))}
         </div>
