@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 
@@ -791,19 +792,69 @@ export default function ProductsPage() {
             </div>
           </header>
 
-          <div className="intelligence-dashboard">
-            <div className="intelligence-dashboard-frame">
-              <img
-                src="/era-intelligence-dashboard.png"
-                alt="ERA Intelligence Platform displaying robot locations, cleaning task replay, operational analytics and fleet status"
-              />
-            </div>
+<div className="intelligence-dashboard">
+  <div className="intelligence-dashboard-visual">
+    <div className="intelligence-dashboard-glow" aria-hidden="true" />
 
-            <div className="intelligence-dashboard-caption">
-              <span>ERA Intelligence Platform</span>
-              <span>Multi-site robotics operations</span>
-            </div>
-          </div>
+    <div className="intelligence-dashboard-frame">
+      <div className="intelligence-dashboard-toolbar">
+        <div className="dashboard-window-controls" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+
+        <div className="dashboard-toolbar-label">
+          ERA Intelligence Platform
+        </div>
+
+        <div className="dashboard-toolbar-status">
+          <span />
+          Platform online
+        </div>
+      </div>
+
+      <div className="intelligence-dashboard-image-wrap">
+        <Image
+          src="/era-intelligence-dashboard.png"
+          alt="Conceptual visual of the ERA Intelligence Platform for multi-site robotic fleet monitoring and AI-assisted operations"
+          width={1664}
+          height={928}
+          sizes="(max-width: 720px) 94vw, (max-width: 1200px) 90vw, 1400px"
+          className="intelligence-dashboard-image"
+          priority
+        />
+
+        <div
+          className="intelligence-dashboard-overlay"
+          aria-hidden="true"
+        />
+      </div>
+    </div>
+
+    <div className="dashboard-floating-card dashboard-floating-card-left">
+      <span className="dashboard-floating-label">Fleet visibility</span>
+      <strong>Multi-site operations</strong>
+      <small>Live status and task activity</small>
+    </div>
+
+    <div className="dashboard-floating-card dashboard-floating-card-right">
+      <span className="dashboard-ai-indicator" aria-hidden="true">
+        ✦
+      </span>
+
+      <div>
+        <span className="dashboard-floating-label">ERA AI</span>
+        <strong>Operational intelligence</strong>
+      </div>
+    </div>
+  </div>
+
+  <div className="intelligence-dashboard-caption">
+    <span>ERA Intelligence Platform</span>
+    <span>Conceptual product visual · Interface subject to development</span>
+  </div>
+</div>
 
           <div className="platform-capability-grid">
             {platformCapabilities.map((capability) => (
