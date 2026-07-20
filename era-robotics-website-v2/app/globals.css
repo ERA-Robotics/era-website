@@ -3002,8 +3002,6 @@ min-height:460px;
     grid-template-columns: 1fr;
     gap: 38px;
   }
-}
-
   .industry-detail-link {
     grid-column: auto;
     justify-self: start;
