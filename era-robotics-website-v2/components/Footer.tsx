@@ -45,7 +45,9 @@ export default function Footer() {
         <div className="footer-column">
           <h3>Solutions</h3>
 
-          <Link href="/solutions">Commercial Robotics</Link>
+<Link href="/solutions#commercial-robotics">
+  Commercial Robotics
+</Link>
           <Link href="/solutions#physical-ai">Physical AI</Link>
           <Link href="/solutions#edge-ai">Edge Computing</Link>
           <Link href="/solutions#integration">Integration Services</Link>
