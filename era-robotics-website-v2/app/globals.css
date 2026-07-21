@@ -550,12 +550,12 @@ p { color: var(--muted); line-height: 1.58; }
 
 /* Permanently highlight Deployments */
 
-.desktop-nav .nav-link-featured {
+.desktop-nav .nav-link-active {
   color: #ffffff;
   font-weight: 600;
 }
 
-.desktop-nav .nav-link-featured::after {
+.desktop-nav .nav-link-active::after {
   width: 100%;
 }
 
