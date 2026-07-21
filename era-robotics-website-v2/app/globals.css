@@ -6148,38 +6148,106 @@ min-height:460px;
 }
 
 /* =========================================================
-   INDUSTRIES SUBNAV DESKTOP FIT FIX
+   INDUSTRIES SUBNAV — FINAL FIX
 ========================================================= */
 
-/*
-  Nine industries are too wide with the previous 34px gap.
-  On large desktop screens, fit them inside the shell.
-  On narrower screens, retain horizontal scrolling.
-*/
+.industries-subnav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(5, 6, 7, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
 
-@media (min-width: 1281px) {
+.industries-subnav-inner {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.industries-subnav a {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 24px 0 22px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.69rem;
+  font-weight: 650;
+  letter-spacing: 0.055em;
+  white-space: nowrap;
+  transition: color 180ms ease;
+}
+
+.industries-subnav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: #ffffff;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.industries-subnav a:hover {
+  color: #ffffff;
+}
+
+.industries-subnav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Large desktop: distribute all nine items inside the existing shell */
+
+@media (min-width: 1381px) {
   .industries-subnav-inner {
-    width: 100%;
     justify-content: space-between;
-    gap: 18px;
-    overflow-x: visible;
-  }
-
-  .industries-subnav a {
-    font-size: 0.7rem;
-    letter-spacing: 0.055em;
   }
 }
 
-@media (max-width: 1280px) {
-  .industries-subnav {
-    overflow: hidden;
-  }
+/* Smaller desktop and tablet: horizontal scrolling */
 
+@media (max-width: 1380px) {
   .industries-subnav-inner {
     justify-content: flex-start;
-    gap: 26px;
+    gap: 30px;
     overflow-x: auto;
-    padding-right: 32px;
+    overflow-y: hidden;
+    padding-right: 40px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
+
+  .industries-subnav-inner::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 720px) {
+  .industries-subnav-inner {
+    min-height: 60px;
+    gap: 24px;
+    padding-right: 28px;
+  }
+
+  .industries-subnav a {
+    padding: 21px 0 19px;
+    font-size: 0.68rem;
+  }
+}
+
+/* Prevent anchored sections from hiding behind the sticky subnav */
+
+.industry-detail {
+  scroll-margin-top: 96px;
 }
