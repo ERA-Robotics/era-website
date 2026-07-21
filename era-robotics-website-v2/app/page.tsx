@@ -1,83 +1,147 @@
 import Link from "next/link";
-import CardGrid from "@/components/CardGrid";
 
 const solutions = [
   {
     title: "Commercial Robotics",
-    body: "Autonomous systems for cleaning, delivery, logistics and service operations.",
-    href: "/solutions"
+    body:
+      "Autonomous cleaning, service and item delivery, and industrial material-movement systems for real operating environments.",
+    href: "/solutions#commercial-robotics",
+    status: "CURRENT CAPABILITY",
+  },
+  {
+    title: "Deployment & Integration",
+    body:
+      "Site assessment, workflow design, mapping, commissioning, training and ongoing local support.",
+    href: "/solutions#deployment-integration",
+    status: "CURRENT CAPABILITY",
   },
   {
     title: "Physical AI",
-    body: "Machine perception, spatial intelligence and autonomous decision-making for the physical world.",
-    href: "/solutions#physical-ai"
+    body:
+      "Developing toward robotic systems that can interpret environments, respond to change and support connected workflows.",
+    href: "/solutions#physical-ai",
+    status: "DEVELOPING CAPABILITY",
   },
   {
-    title: "Edge Computing",
-    body: "High-performance AI inference close to where machines and operations happen.",
-    href: "/solutions#edge-ai"
+    title: "Edge Intelligence",
+    body:
+      "Local processing designed to support responsive robotic operation where the use case requires it.",
+    href: "/solutions#edge-intelligence",
+    status: "DEVELOPING CAPABILITY",
   },
   {
-    title: "AI Vision",
-    body: "Computer vision systems that help machines inspect, understand and respond.",
-    href: "/solutions#ai-vision"
+    title: "Computer Vision",
+    body:
+      "Emerging perception capabilities that can help robotic systems understand spaces, conditions and events.",
+    href: "/solutions#computer-vision",
+    status: "DEVELOPING CAPABILITY",
   },
-  {
-    title: "Integration Services",
-    body: "Deployment, workflow integration, commissioning and local lifecycle support.",
-    href: "/solutions#integration"
-  }
 ];
 
 const industries = [
-  ["Retail", "Autonomous cleaning, customer service and operational intelligence."],
-  ["Healthcare", "Reliable automation for complex, safety-conscious environments."],
-  ["Hospitality", "Robotics that enhance guest experience and reduce repetitive work."],
-  ["Logistics", "Autonomous movement, workflow automation and edge intelligence."],
-  ["Manufacturing", "Connected robotics, vision systems and intelligent operations."],
-  ["Facilities Management", "Scalable automation for multi-site facility portfolios."]
+  {
+    title: "Retail & Supermarkets",
+    body:
+      "Autonomous cleaning and service robotics for high-traffic retail environments.",
+    href: "/industries#retail",
+  },
+  {
+    title: "Healthcare & Aged Care",
+    body:
+      "Autonomous cleaning robotics for private hospitals, aged care facilities and other safety-conscious environments.",
+    href: "/industries#healthcare",
+  },
+  {
+    title: "Manufacturing",
+    body:
+      "Cleaning and material-movement robotics for complex industrial operations.",
+    href: "/industries#manufacturing",
+  },
+  {
+    title: "Warehousing & Storage",
+    body:
+      "Autonomous cleaning and internal material movement across large operational sites.",
+    href: "/industries#warehousing",
+  },
+  {
+    title: "Hotels & Hospitality",
+    body:
+      "Cleaning, food delivery and service robotics for guest-facing and back-of-house operations.",
+    href: "/industries#hospitality",
+  },
+  {
+    title: "Commercial Property",
+    body:
+      "Autonomous cleaning and internal service robotics for offices and managed properties.",
+    href: "/industries#commercial-property",
+  },
 ];
 
-const cases = [
+const deployments = [
   {
-    tag: "RETAIL",
-    title: "Enterprise Retail Deployment",
-    body: "Autonomous cleaning systems deployed across large-format retail environments.",
-    href: "/case-studies"
+    number: "01",
+    industry: "MANUFACTURING",
+    label: "CONTROLLED OPERATING ENVIRONMENT",
+    title:
+      "Autonomous cleaning supporting pharmaceutical manufacturing operations.",
+    body:
+      "A structured deployment designed around floor conditions, production continuity, safety requirements and reliable day-to-day operation.",
+    tags: [
+      "Autonomous Cleaning",
+      "Site Configuration",
+      "Operational Support",
+    ],
+    featured: true,
   },
   {
-    tag: "LOGISTICS",
-    title: "Smart Logistics Automation",
-    body: "Robotics and Physical AI improving movement and warehouse workflows.",
-    href: "/case-studies"
+    number: "02",
+    industry: "PUBLIC FACILITIES",
+    label: "VISITOR ENVIRONMENT",
+    title:
+      "Robotic cleaning deployed within a high-profile public museum.",
+    body:
+      "Route design and operational configuration focused on public safety, visitor traffic and low-disruption cleaning.",
+    tags: ["Public Environment", "Route Design"],
+    featured: false,
   },
   {
-    tag: "HOSPITALITY",
-    title: "Hospitality Transformation",
-    body: "Service robotics supporting guest experience and operational efficiency.",
-    href: "/case-studies"
-  }
+    number: "03",
+    industry: "HOSPITALITY",
+    label: "HOTEL OPERATIONS",
+    title:
+      "Commercial robotics supporting premium hotel operations.",
+    body:
+      "Deployment planned around presentation standards, staff adoption, guest experience and repeatable daily workflows.",
+    tags: ["Hospitality", "Staff Training"],
+    featured: false,
+  },
 ];
 
-const insights = [
+const approachItems = [
   {
-    tag: "PHYSICAL AI",
-    title: "Physical AI in the Field",
-    body: "How machine perception and edge intelligence move automation from screen to site.",
-    href: "/resources"
+    number: "01",
+    title: "Enterprise-first",
+    body:
+      "We begin with the operating workflow, business requirements and site constraints before selecting the technology.",
   },
   {
-    tag: "EDGE AI",
-    title: "Why Intelligence Belongs at the Edge",
-    body: "The role of low-latency inference in responsive autonomous systems.",
-    href: "/resources"
+    number: "02",
+    title: "Integration-led",
+    body:
+      "Robotics must work safely with people, equipment, workflows and existing operational processes.",
   },
   {
-    tag: "COMMERCIAL ROBOTICS",
-    title: "Robotics Beyond Pilots",
-    body: "What it takes to deploy robots reliably inside enterprise environments.",
-    href: "/resources"
-  }
+    number: "03",
+    title: "Local deployment capability",
+    body:
+      "Site assessment, commissioning, staff training and lifecycle support across Australia and New Zealand.",
+  },
+  {
+    number: "04",
+    title: "Future-ready direction",
+    body:
+      "Deployments designed to evolve from commercial robotics toward edge intelligence, computer vision and Physical AI.",
+  },
 ];
 
 export default function Home() {
@@ -85,659 +149,688 @@ export default function Home() {
     <main>
       <section className="hero">
         <video
-  className="hero-video"
-  autoPlay
-  muted
-  loop
-  playsInline
-  preload="metadata"
-  aria-hidden="true"
->
-  <source src="/hero-video.mp4" type="video/mp4" />
-</video>
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
 
-<div className="hero-shade" aria-hidden="true"></div>
+        <div className="hero-shade" aria-hidden="true" />
+
         <div className="shell hero-content">
-          <p className="kicker">ROBOTICS · PHYSICAL AI · EDGE INTELLIGENCE</p>
-          <h1>Engineering Intelligence for the Physical World.</h1>
-          <p className="hero-subtitle">
-            ERA Robotics designs, integrates and deploys intelligent robotics,
-            edge AI and Physical AI solutions for enterprise operations across
-            Australia and New Zealand.
+          <p className="kicker">
+            COMMERCIAL ROBOTICS · DEPLOYMENT · PHYSICAL AI
           </p>
+
+          <h1>Engineering Intelligence for the Physical World.</h1>
+
+          <p className="hero-subtitle">
+            ERA Robotics deploys commercial robotic systems and integrates
+            them into real enterprise operations across Australia and New
+            Zealand—while building toward the future of Physical AI.
+          </p>
+
           <div className="button-row">
-            <Link href="/solutions" className="pill pill-light">Explore Solutions</Link>
-            <Link href="/contact" className="pill pill-outline">Talk to ERA</Link>
+            <Link href="/solutions" className="pill pill-light">
+              Explore Solutions
+            </Link>
+
+            <Link href="/contact" className="pill pill-outline">
+              Talk to ERA
+            </Link>
           </div>
         </div>
       </section>
 
-<section className="section trusted">
-  <div className="shell">
-    <p className="kicker">ENTERPRISE EXPERIENCE</p>
+      <section className="section trusted">
+        <div className="shell">
+          <p className="kicker">ENTERPRISE EXPERIENCE</p>
 
-    <h2>
-      Proven in complex, real-world operating environments.
-    </h2>
+          <h2>Proven in complex, real-world operating environments.</h2>
 
-    <p className="section-copy wide">
-      ERA Robotics supports commercial automation projects from initial site
-      assessment through deployment, integration, training and ongoing
-      lifecycle support across Australia and New Zealand.
-    </p>
+          <p className="section-copy wide">
+            ERA supports commercial automation projects from initial site
+            assessment through solution design, deployment, training and
+            ongoing lifecycle support across Australia and New Zealand.
+          </p>
 
-    <div className="experience-grid">
-      <article>
-        <span className="experience-number">AU + NZ</span>
-        <h3>Regional capability</h3>
-        <p>
-          Local deployment and support for enterprise operations across
-          Australia and New Zealand.
-        </p>
-      </article>
+          <div className="experience-grid">
+            <article>
+              <span className="experience-number">AU + NZ</span>
 
-      <article>
-        <span className="experience-number">Multi-site</span>
-        <h3>Scalable deployment</h3>
-        <p>
-          Structured rollout processes designed for single locations and
-          distributed enterprise portfolios.
-        </p>
-      </article>
+              <h3>Regional capability</h3>
 
-      <article>
-        <span className="experience-number">End-to-end</span>
-        <h3>Lifecycle delivery</h3>
-        <p>
-          Site assessment, solution design, commissioning, training,
-          integration and ongoing support.
-        </p>
-      </article>
+              <p>
+                Local deployment and support for enterprise operations across
+                Australia and New Zealand.
+              </p>
+            </article>
 
-      <article>
-        <span className="experience-number">Cross-sector</span>
-        <h3>Operational experience</h3>
-        <p>
-          Practical experience across retail, facilities, hospitality,
-          logistics and commercial environments.
-        </p>
-      </article>
-    </div>
+            <article>
+              <span className="experience-number">Multi-site</span>
 
-    <p className="legal-note">
-      Selected project details and customer references are available through
-      private consultation, subject to confidentiality obligations.
-    </p>
-  </div>
-</section>
+              <h3>Scalable deployment</h3>
 
-<section className="section solutions-section">
-  <div className="shell">
-    <div className="section-heading-row">
-      <div>
-        <p className="kicker">WHAT WE BUILD</p>
-        <h2>Five capabilities. One integrated platform.</h2>
-      </div>
+              <p>
+                Structured rollout processes designed for individual
+                facilities and distributed enterprise portfolios.
+              </p>
+            </article>
 
-      <p className="section-copy">
-        ERA brings together robotics, Physical AI, edge computing, computer
-        vision and enterprise integration to build intelligent operational
-        systems.
-      </p>
-    </div>
+            <article>
+              <span className="experience-number">End-to-end</span>
 
-    <div className="solutions-grid">
-      {solutions.map((solution, index) => (
-        <Link
-          href={solution.href}
-          className={`solution-card solution-card-${index + 1}`}
-          key={solution.title}
-        >
-          <div className="solution-card-top">
-            <span className="solution-number">
-              {String(index + 1).padStart(2, "0")}
-            </span>
+              <h3>Lifecycle delivery</h3>
 
-            <span className="solution-arrow" aria-hidden="true">
-              ↗
-            </span>
+              <p>
+                Site assessment, solution design, commissioning, training and
+                ongoing operational support.
+              </p>
+            </article>
+
+            <article>
+              <span className="experience-number">Cross-sector</span>
+
+              <h3>Operational experience</h3>
+
+              <p>
+                Practical experience across retail, healthcare, education,
+                manufacturing, hospitality and public environments.
+              </p>
+            </article>
           </div>
 
-          <div className="solution-visual" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-          <div className="solution-card-copy">
-            <h3>{solution.title}</h3>
-            <p>{solution.body}</p>
-          </div>
-        </Link>
-      ))}
-    </div>
-  </div>
-</section>
-
-<section className="section section-alt industries-section">
-  <div className="shell">
-    <div className="section-heading-row">
-      <div>
-        <p className="kicker">INDUSTRIES</p>
-        <h2>Automation shaped around real operating environments.</h2>
-      </div>
-
-      <p className="section-copy">
-        Every industry has different workflows, risks, service expectations and
-        physical constraints. ERA designs automation around the environment,
-        rather than forcing the environment around the technology.
-      </p>
-    </div>
-
-    <div className="industries-layout">
-      <Link href="/industries#retail" className="industry-feature">
-        <div className="industry-feature-visual" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div className="industry-feature-top">
-          <span className="industry-index">01</span>
-          <span className="industry-arrow">↗</span>
-        </div>
-
-        <div className="industry-feature-copy">
-          <p className="industry-label">FEATURED INDUSTRY</p>
-          <h3>Retail</h3>
-          <p>
-            Autonomous cleaning, customer-facing robotics and operational
-            intelligence for complex, high-traffic environments.
+          <p className="legal-note">
+            Selected project details and customer references are available
+            through private consultation, subject to confidentiality
+            obligations.
           </p>
         </div>
-      </Link>
+      </section>
 
-      <div className="industry-list">
-        {industries.slice(1).map(([title, body], index) => (
-          <Link
-            href={`/industries#${title.toLowerCase().replaceAll(" ", "-")}`}
-            className="industry-list-item"
-            key={title}
-          >
-            <span className="industry-index">
-              {String(index + 2).padStart(2, "0")}
-            </span>
-
+      <section className="section solutions-section">
+        <div className="shell">
+          <div className="section-heading-row">
             <div>
-              <h3>{title}</h3>
-              <p>{body}</p>
+              <p className="kicker">WHAT WE DELIVER</p>
+
+              <h2>Five capabilities. One integrated approach.</h2>
             </div>
 
-            <span className="industry-arrow" aria-hidden="true">
-              ↗
-            </span>
-          </Link>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+            <p className="section-copy">
+              ERA delivers commercial robotics and deployment integration
+              today, while developing the Physical AI, edge intelligence and
+              computer vision capabilities that will shape connected robotic
+              operations tomorrow.
+            </p>
+          </div>
 
-    <section className="section physical-ai-section">
-  <div className="shell">
-    <div className="physical-ai-heading">
-      <div>
-        <p className="kicker">PHYSICAL AI PLATFORM</p>
-        <h2>
-          Connecting machines, intelligence and enterprise operations.
-        </h2>
-      </div>
+          <div className="solutions-grid">
+            {solutions.map((solution, index) => (
+              <Link
+                href={solution.href}
+                className={`solution-card solution-card-${index + 1}`}
+                key={solution.title}
+              >
+                <div className="solution-card-top">
+                  <span className="solution-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
 
-      <div>
-        <p className="section-copy">
-          ERA brings together autonomous machines, machine perception, edge
-          inference and enterprise workflows through one integration layer.
-        </p>
+                  <span className="solution-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </div>
 
-        <Link href="/solutions#physical-ai" className="text-link">
-          Explore Physical AI
-          <span aria-hidden="true">↗</span>
-        </Link>
-      </div>
-    </div>
+                <div className="solution-visual" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                </div>
 
-    <div className="era-platform">
-      <div className="platform-column platform-inputs">
-        <p className="platform-label">PHYSICAL SYSTEMS</p>
-
-        <div className="platform-module">
-          <span>01</span>
-          <div>
-            <h3>Commercial Robotics</h3>
-            <p>Cleaning, delivery, logistics and service robots.</p>
+                <div className="solution-card-copy">
+                  <p className="solution-card-status">{solution.status}</p>
+                  <h3>{solution.title}</h3>
+                  <p>{solution.body}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
+      </section>
 
-        <div className="platform-module">
-          <span>02</span>
-          <div>
-            <h3>Vision & Sensors</h3>
-            <p>Cameras, perception systems and environmental data.</p>
+      <section className="section section-alt industries-section">
+        <div className="shell">
+          <div className="section-heading-row">
+            <div>
+              <p className="kicker">INDUSTRIES</p>
+
+              <h2>Automation shaped around real operating environments.</h2>
+            </div>
+
+            <p className="section-copy">
+              Every environment has different workflows, risks, service
+              expectations and physical constraints. ERA selects and deploys
+              robotic systems around the operation—not the other way around.
+            </p>
+          </div>
+
+          <div className="industries-layout">
+            <Link
+              href={industries[0].href}
+              className="industry-feature"
+            >
+              <div
+                className="industry-feature-visual"
+                aria-hidden="true"
+              >
+                <span />
+                <span />
+                <span />
+              </div>
+
+              <div className="industry-feature-top">
+                <span className="industry-index">01</span>
+                <span className="industry-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </div>
+
+              <div className="industry-feature-copy">
+                <p className="industry-label">FEATURED INDUSTRY</p>
+
+                <h3>{industries[0].title}</h3>
+
+                <p>{industries[0].body}</p>
+              </div>
+            </Link>
+
+            <div className="industry-list">
+              {industries.slice(1).map((industry, index) => (
+                <Link
+                  href={industry.href}
+                  className="industry-list-item"
+                  key={industry.title}
+                >
+                  <span className="industry-index">
+                    {String(index + 2).padStart(2, "0")}
+                  </span>
+
+                  <div>
+                    <h3>{industry.title}</h3>
+                    <p>{industry.body}</p>
+                  </div>
+
+                  <span className="industry-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="platform-module">
-          <span>03</span>
-          <div>
-            <h3>Operational Data</h3>
-            <p>Site conditions, workflows and machine telemetry.</p>
+      <section className="section physical-ai-section">
+        <div className="shell">
+          <div className="physical-ai-heading">
+            <div>
+              <p className="kicker">PHYSICAL AI DIRECTION</p>
+
+              <h2>
+                Building toward connected intelligence for physical
+                operations.
+              </h2>
+            </div>
+
+            <div>
+              <p className="section-copy">
+                ERA is developing toward an operating model where commercial
+                robotics, computer vision, edge intelligence and enterprise
+                workflows can function as connected systems.
+              </p>
+
+              <Link
+                href="/solutions#physical-ai"
+                className="text-link"
+              >
+                Explore the Physical AI direction
+                <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="era-platform">
+            <div className="platform-column platform-inputs">
+              <p className="platform-label">PHYSICAL OPERATIONS</p>
+
+              <div className="platform-module">
+                <span>01</span>
+
+                <div>
+                  <h3>Commercial Robotics</h3>
+
+                  <p>
+                    Cleaning, service delivery and material-movement systems.
+                  </p>
+                </div>
+              </div>
+
+              <div className="platform-module">
+                <span>02</span>
+
+                <div>
+                  <h3>Vision & Sensors</h3>
+
+                  <p>
+                    Emerging perception capabilities and environmental data.
+                  </p>
+                </div>
+              </div>
+
+              <div className="platform-module">
+                <span>03</span>
+
+                <div>
+                  <h3>Operational Context</h3>
+
+                  <p>
+                    Site conditions, workflows, people and operating
+                    constraints.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="platform-core">
+              <div
+                className="core-orbit core-orbit-one"
+                aria-hidden="true"
+              />
+
+              <div
+                className="core-orbit core-orbit-two"
+                aria-hidden="true"
+              />
+
+              <div className="core-glow" aria-hidden="true" />
+
+              <div className="core-content">
+                <span className="core-kicker">ERA</span>
+
+                <h3>Integration Vision</h3>
+
+                <p>
+                  A future framework connecting robotic systems, local
+                  intelligence and enterprise workflows.
+                </p>
+
+                <div className="core-capabilities">
+                  <span>Deployment</span>
+                  <span>Edge Intelligence</span>
+                  <span>Computer Vision</span>
+                  <span>Workflow Integration</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="platform-column platform-outputs">
+              <p className="platform-label">OPERATIONAL OUTCOMES</p>
+
+              <div className="platform-module">
+                <span>04</span>
+
+                <div>
+                  <h3>Connected Workflows</h3>
+
+                  <p>
+                    Robotics operating within established enterprise
+                    processes.
+                  </p>
+                </div>
+              </div>
+
+              <div className="platform-module">
+                <span>05</span>
+
+                <div>
+                  <h3>Operational Visibility</h3>
+
+                  <p>
+                    Performance information and system visibility where
+                    supported.
+                  </p>
+                </div>
+              </div>
+
+              <div className="platform-module">
+                <span>06</span>
+
+                <div>
+                  <h3>Future Intelligence</h3>
+
+                  <p>
+                    Architecture designed to support more adaptive robotic
+                    operation over time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="physical-ai-pillars">
+            <article>
+              <span>01</span>
+
+              <h3>Perceive</h3>
+
+              <p>
+                Robotic systems use sensors and emerging vision capabilities
+                to understand their operating environment.
+              </p>
+            </article>
+
+            <article>
+              <span>02</span>
+
+              <h3>Interpret</h3>
+
+              <p>
+                Local intelligence can help systems interpret conditions and
+                respond more effectively.
+              </p>
+            </article>
+
+            <article>
+              <span>03</span>
+
+              <h3>Act</h3>
+
+              <p>
+                Robotics performs defined tasks within real commercial and
+                industrial operations.
+              </p>
+            </article>
+
+            <article>
+              <span>04</span>
+
+              <h3>Improve</h3>
+
+              <p>
+                Deployment data and operational feedback can support ongoing
+                workflow optimisation.
+              </p>
+            </article>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="platform-core">
-        <div className="core-orbit core-orbit-one" aria-hidden="true"></div>
-        <div className="core-orbit core-orbit-two" aria-hidden="true"></div>
-        <div className="core-glow" aria-hidden="true"></div>
-
-        <div className="core-content">
-          <span className="core-kicker">ERA</span>
-          <h3>Integration Layer</h3>
-          <p>
-            The intelligence and orchestration layer connecting physical
-            systems with enterprise workflows.
-          </p>
-
-          <div className="core-capabilities">
-            <span>Edge AI</span>
-            <span>Fleet Intelligence</span>
-            <span>Computer Vision</span>
-            <span>Workflow Automation</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="platform-column platform-outputs">
-        <p className="platform-label">ENTERPRISE OUTCOMES</p>
-
-        <div className="platform-module">
-          <span>04</span>
-          <div>
-            <h3>Enterprise Systems</h3>
-            <p>Connected workflows, platforms and operational tools.</p>
-          </div>
-        </div>
-
-        <div className="platform-module">
-          <span>05</span>
-          <div>
-            <h3>Fleet Management</h3>
-            <p>Monitoring, orchestration and multi-site visibility.</p>
-          </div>
-        </div>
-
-        <div className="platform-module">
-          <span>06</span>
-          <div>
-            <h3>Operational Intelligence</h3>
-            <p>Insights that support better decisions and performance.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div className="physical-ai-pillars">
-      <article>
-        <span>01</span>
-        <h3>Perceive</h3>
-        <p>
-          Machines understand environments through sensors, vision and
-          operational data.
-        </p>
-      </article>
-
-      <article>
-        <span>02</span>
-        <h3>Decide</h3>
-        <p>
-          Edge intelligence enables responsive decision-making close to the
-          physical operation.
-        </p>
-      </article>
-
-      <article>
-        <span>03</span>
-        <h3>Act</h3>
-        <p>
-          Robotics and connected systems execute workflows in real operating
-          environments.
-        </p>
-      </article>
-
-      <article>
-        <span>04</span>
-        <h3>Improve</h3>
-        <p>
-          Data and enterprise integration create continuous operational
-          improvement.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-      
       <section className="section case-study-section">
-  <div className="shell">
-    <div className="section-heading-row">
-      <div>
-        <p className="kicker">PROOF IN THE FIELD</p>
-        <h2>Real-world deployments, without exposing client intelligence.</h2>
-      </div>
+        <div className="shell">
+          <div className="section-heading-row">
+            <div>
+              <p className="kicker">PROOF IN THE FIELD</p>
 
-      <p className="section-copy">
-        Selected project examples are presented by operating environment and
-        solution type. Detailed customer references are available privately,
-        subject to confidentiality requirements.
-      </p>
-    </div>
+              <h2>
+                Real-world deployments, presented without exposing customer
+                intelligence.
+              </h2>
+            </div>
 
-    <div className="case-study-grid">
-      <Link href="/case-studies#retail" className="case-study-card case-study-feature">
-        <div className="case-study-top">
-          <span>01</span>
-          <span>RETAIL</span>
-        </div>
-
-        <div className="case-study-visual" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div className="case-study-copy">
-          <p className="case-study-label">MULTI-SITE AUTOMATION</p>
-          <h3>Autonomous cleaning for large-format retail environments.</h3>
-          <p>
-            Site assessment, deployment planning, commissioning, staff
-            training and ongoing support for high-traffic commercial spaces.
-          </p>
-
-          <div className="case-study-tags">
-            <span>Commercial Robotics</span>
-            <span>Multi-site Rollout</span>
-            <span>Lifecycle Support</span>
-          </div>
-        </div>
-
-        <span className="case-study-arrow" aria-hidden="true">↗</span>
-      </Link>
-
-      <Link href="/case-studies#logistics" className="case-study-card">
-        <div className="case-study-top">
-          <span>02</span>
-          <span>LOGISTICS</span>
-        </div>
-
-        <div className="case-study-copy">
-          <p className="case-study-label">WORKFLOW AUTOMATION</p>
-          <h3>Robotics supporting movement and operational workflows.</h3>
-          <p>
-            Automation designed around site traffic, task sequencing,
-            operational constraints and enterprise deployment requirements.
-          </p>
-
-          <div className="case-study-tags">
-            <span>Autonomous Systems</span>
-            <span>Workflow Design</span>
-          </div>
-        </div>
-
-        <span className="case-study-arrow" aria-hidden="true">↗</span>
-      </Link>
-
-      <Link href="/case-studies#hospitality" className="case-study-card">
-        <div className="case-study-top">
-          <span>03</span>
-          <span>HOSPITALITY</span>
-        </div>
-
-        <div className="case-study-copy">
-          <p className="case-study-label">SERVICE OPERATIONS</p>
-          <h3>Service robotics for guest-facing and back-of-house tasks.</h3>
-          <p>
-            Deployment focused on reliability, staff adoption, guest
-            experience and repeatable day-to-day operation.
-          </p>
-
-          <div className="case-study-tags">
-            <span>Service Robotics</span>
-            <span>Training</span>
-          </div>
-        </div>
-
-        <span className="case-study-arrow" aria-hidden="true">↗</span>
-      </Link>
-    </div>
-
-    <div className="case-study-footer">
-      <p>
-        Customer identities, site details and commercial outcomes are shared
-        only where disclosure has been approved.
-      </p>
-
-      <Link href="/case-studies" className="text-link">
-        View project experience
-        <span aria-hidden="true">↗</span>
-      </Link>
-    </div>
-  </div>
-</section>
-
-<section className="section section-alt why-era-section">
-  <div className="shell">
-    <div className="why-era-layout">
-      <div className="why-era-intro">
-        <p className="kicker">WHY ERA</p>
-
-        <h2>
-          Technology alone does not deliver operational value.
-        </h2>
-
-        <p className="why-era-lead">
-          Deployment does. Integration does. Support does.
-        </p>
-
-        <p className="section-copy">
-          ERA Robotics approaches automation as an operational system—not a
-          standalone machine. We design around the site, workflow, people and
-          enterprise environment.
-        </p>
-
-        <Link href="/about" className="text-link">
-          Learn about ERA
-          <span aria-hidden="true">↗</span>
-        </Link>
-      </div>
-
-      <div className="why-era-list">
-        <article>
-          <span className="why-era-number">01</span>
-
-          <div>
-            <h3>Enterprise-first</h3>
-            <p>
-              We begin with the operating workflow, business requirements and
-              site constraints before selecting the technology.
+            <p className="section-copy">
+              Selected projects are presented by operating environment and
+              solution type. Detailed customer references are available
+              privately, subject to confidentiality requirements.
             </p>
           </div>
-        </article>
 
-        <article>
-          <span className="why-era-number">02</span>
+          <div className="case-study-grid">
+            {deployments.map((deployment) => (
+              <Link
+                href="/deployments"
+                className={`case-study-card${
+                  deployment.featured ? " case-study-feature" : ""
+                }`}
+                key={deployment.number}
+              >
+                <div className="case-study-top">
+                  <span>{deployment.number}</span>
+                  <span>{deployment.industry}</span>
+                </div>
 
-          <div>
-            <h3>Integration-led</h3>
+                {deployment.featured && (
+                  <div
+                    className="case-study-visual"
+                    aria-hidden="true"
+                  >
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                )}
+
+                <div className="case-study-copy">
+                  <p className="case-study-label">
+                    {deployment.label}
+                  </p>
+
+                  <h3>{deployment.title}</h3>
+
+                  <p>{deployment.body}</p>
+
+                  <div className="case-study-tags">
+                    {deployment.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <span
+                  className="case-study-arrow"
+                  aria-hidden="true"
+                >
+                  ↗
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="case-study-footer">
             <p>
-              Robotics must connect with people, processes, data and enterprise
-              systems to create sustainable value.
+              Customer identities, site details and commercial outcomes are
+              shared only where disclosure has been approved.
+            </p>
+
+            <Link href="/deployments" className="text-link">
+              Explore deployments
+              <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt why-era-section">
+        <div className="shell">
+          <div className="why-era-layout">
+            <div className="why-era-intro">
+              <p className="kicker">WHY ERA</p>
+
+              <h2>
+                Technology alone does not deliver operational value.
+              </h2>
+
+              <p className="why-era-lead">
+                Deployment does. Integration does. Support does.
+              </p>
+
+              <p className="section-copy">
+                ERA approaches automation as an operational system—not a
+                standalone machine. We design around the environment,
+                workflow, people and operating requirements.
+              </p>
+
+              <Link href="/about" className="text-link">
+                Learn about ERA
+                <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+
+            <div className="why-era-list">
+              {approachItems.map((item) => (
+                <article key={item.number}>
+                  <span className="why-era-number">
+                    {item.number}
+                  </span>
+
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="why-era-statement">
+            <span>ERA DIRECTION</span>
+
+            <p>
+              ERA Robotics is building the bridge between today&apos;s
+              commercial robotics and tomorrow&apos;s Physical AI systems.
             </p>
           </div>
-        </article>
+        </div>
+      </section>
 
-        <article>
-          <span className="why-era-number">03</span>
+      <section className="section resources-section">
+        <div className="shell">
+          <div className="section-heading-row">
+            <div>
+              <p className="kicker">RESOURCES</p>
 
-          <div>
-            <h3>Local deployment capability</h3>
-            <p>
-              Site assessment, commissioning, training and lifecycle support
-              across Australia and New Zealand.
+              <h2>
+                Insights for deploying robotics in the real world.
+              </h2>
+            </div>
+
+            <p className="section-copy">
+              Practical guidance on automation strategy, site readiness,
+              enterprise deployment and the evolution toward Physical AI.
             </p>
           </div>
-        </article>
 
-        <article>
-          <span className="why-era-number">04</span>
+          <div className="resources-grid">
+            <Link
+              href="/resources"
+              className="resource-card resource-large"
+            >
+              <div className="resource-top">
+                <span>GUIDE</span>
+                <span>01</span>
+              </div>
 
-          <div>
-            <h3>Future-ready architecture</h3>
-            <p>
-              Solutions designed to evolve from commercial robotics toward
-              edge intelligence and Physical AI.
-            </p>
+              <div
+                className="resource-pattern"
+                aria-hidden="true"
+              >
+                <span />
+                <span />
+                <span />
+              </div>
+
+              <div className="resource-content">
+                <p className="resource-category">
+                  DEPLOYMENT GUIDE
+                </p>
+
+                <h3>
+                  Preparing commercial facilities for autonomous robotics.
+                </h3>
+
+                <p>
+                  Site readiness, infrastructure, workflows, safety
+                  considerations and successful enterprise deployment.
+                </p>
+              </div>
+
+              <span
+                className="resource-arrow"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </Link>
+
+            <Link href="/resources" className="resource-card">
+              <div className="resource-top">
+                <span>BRIEF</span>
+                <span>02</span>
+              </div>
+
+              <div className="resource-content">
+                <p className="resource-category">
+                  INDUSTRY INSIGHT
+                </p>
+
+                <h3>
+                  Choosing the right robotics system for enterprise
+                  operations.
+                </h3>
+
+                <p>
+                  Evaluation criteria beyond hardware specifications.
+                </p>
+              </div>
+
+              <span
+                className="resource-arrow"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </Link>
+
+            <Link href="/resources" className="resource-card">
+              <div className="resource-top">
+                <span>ARTICLE</span>
+                <span>03</span>
+              </div>
+
+              <div className="resource-content">
+                <p className="resource-category">PHYSICAL AI</p>
+
+                <h3>
+                  From commercial robotics to intelligent physical systems.
+                </h3>
+
+                <p>
+                  Understanding the next evolution of enterprise automation.
+                </p>
+              </div>
+
+              <span
+                className="resource-arrow"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </Link>
           </div>
-        </article>
-      </div>
-    </div>
 
-    <div className="why-era-statement">
-      <span>ERA DIRECTION</span>
-
-      <p>
-        ERA Robotics is building the bridge between today&apos;s commercial
-        robotics and tomorrow&apos;s Physical AI infrastructure.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section className="section resources-section">
-  <div className="shell">
-
-    <div className="section-heading-row">
-      <div>
-        <p className="kicker">RESOURCES</p>
-
-        <h2>
-          Insights for deploying robotics in the real world.
-        </h2>
-      </div>
-
-      <p className="section-copy">
-        Practical guidance on automation strategy, site readiness,
-        enterprise deployment and the evolution toward Physical AI.
-      </p>
-    </div>
-
-    <div className="resources-grid">
-
-      <Link
-        href="/resources/deployment-guide"
-        className="resource-card resource-large"
-      >
-        <div className="resource-top">
-          <span>GUIDE</span>
-          <span>01</span>
+          <div className="resources-footer">
+            <Link href="/resources" className="text-link">
+              Explore all resources
+              <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
         </div>
-
-        <div className="resource-pattern" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div className="resource-content">
-          <p className="resource-category">
-            DEPLOYMENT GUIDE
-          </p>
-
-          <h3>
-            Preparing commercial facilities for autonomous robotics.
-          </h3>
-
-          <p>
-            Site readiness, infrastructure, workflows, safety
-            considerations and successful enterprise deployment.
-          </p>
-        </div>
-
-        <span className="resource-arrow">↗</span>
-      </Link>
-
-      <Link
-        href="/resources/industry-brief"
-        className="resource-card"
-      >
-        <div className="resource-top">
-          <span>BRIEF</span>
-          <span>02</span>
-        </div>
-
-        <div className="resource-content">
-          <p className="resource-category">
-            INDUSTRY INSIGHT
-          </p>
-
-          <h3>
-            Choosing the right robotics platform for enterprise operations.
-          </h3>
-
-          <p>
-            Evaluation criteria beyond hardware specifications.
-          </p>
-        </div>
-
-        <span className="resource-arrow">↗</span>
-      </Link>
-
-      <Link
-        href="/resources/physical-ai"
-        className="resource-card"
-      >
-        <div className="resource-top">
-          <span>ARTICLE</span>
-          <span>03</span>
-        </div>
-
-        <div className="resource-content">
-          <p className="resource-category">
-            PHYSICAL AI
-          </p>
-
-          <h3>
-            From commercial robotics to intelligent physical systems.
-          </h3>
-
-          <p>
-            Understanding the next evolution of enterprise automation.
-          </p>
-        </div>
-
-        <span className="resource-arrow">↗</span>
-      </Link>
-
-    </div>
-
-    <div className="resources-footer">
-      <Link href="/resources" className="text-link">
-        Explore all resources
-        <span>↗</span>
-      </Link>
-    </div>
-
-  </div>
-</section>
-      
+      </section>
     </main>
   );
 }
