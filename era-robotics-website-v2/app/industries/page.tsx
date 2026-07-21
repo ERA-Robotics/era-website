@@ -5,7 +5,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Robotics Solutions by Industry | ERA Robotics",
   description:
-    "Explore ERA Robotics solutions across commercial cleaning, food and service delivery, and industrial material delivery for retail, education, hospitality, manufacturing, warehousing, commercial property and public facilities.",
+    "Explore autonomous cleaning, service and item delivery, and industrial material-movement robotics for retail, education, healthcare, aged care, hospitality, manufacturing, warehousing, commercial property, public facilities and transport environments.",
 };
 
 const industries = [
@@ -13,7 +13,8 @@ const industries = [
     id: "retail",
     number: "01",
     title: "Retail & Supermarkets",
-    body: "Autonomous cleaning and service robotics for supermarkets, shopping centres and large-format retail environments.",
+    body:
+      "Autonomous cleaning and service robotics for supermarkets, shopping centres and large-format retail environments.",
     priorities: [
       "High daily foot traffic",
       "Consistent floor presentation",
@@ -31,7 +32,8 @@ const industries = [
     id: "education",
     number: "02",
     title: "Education",
-    body: "Commercial cleaning and internal delivery robotics for universities, secondary schools and large education campuses.",
+    body:
+      "Autonomous cleaning and internal delivery robotics for universities, secondary schools and large education campuses.",
     priorities: [
       "Large and distributed facilities",
       "Changing daily schedules",
@@ -46,10 +48,30 @@ const industries = [
     ],
   },
   {
-    id: "warehousing",
+    id: "healthcare",
     number: "03",
+    title: "Healthcare & Aged Care",
+    body:
+      "Autonomous cleaning and internal delivery robotics for private hospitals, aged care facilities and other safety-conscious healthcare environments.",
+    priorities: [
+      "Safety-conscious operations",
+      "Consistent hygiene and presentation standards",
+      "Reliable movement across shared facilities",
+      "Low-disruption operation around patients, residents and staff",
+    ],
+    capabilities: [
+      "Autonomous corridor and public-area cleaning",
+      "Internal item and supply delivery",
+      "Site-specific route planning",
+      "Deployment, staff training and lifecycle support",
+    ],
+  },
+  {
+    id: "warehousing",
+    number: "04",
     title: "Warehousing & Storage",
-    body: "Autonomous cleaning and material delivery systems for warehouses, storage facilities and operational sites with large floor areas.",
+    body:
+      "Autonomous cleaning and material-movement systems for warehouses, storage facilities and operational sites with large floor areas.",
     priorities: [
       "Large operational footprints",
       "Dust and debris management",
@@ -58,21 +80,22 @@ const industries = [
     ],
     capabilities: [
       "Autonomous sweeping and scrubbing",
-      "Industrial material delivery",
+      "Industrial material movement",
       "Route planning around site traffic",
       "Deployment and performance optimisation",
     ],
   },
   {
     id: "manufacturing",
-    number: "04",
+    number: "05",
     title: "Manufacturing",
-    body: "Cleaning and material delivery robotics for factories and industrial facilities where safety, continuity and repeatability are critical.",
+    body:
+      "Cleaning and material-movement robotics for factories and industrial facilities where safety, continuity and repeatability are critical.",
     priorities: [
       "Production continuity",
       "Safe movement around workers",
       "Industrial floor conditions",
-      "Consistent internal logistics",
+      "Consistent internal movement",
     ],
     capabilities: [
       "Autonomous industrial floor cleaning",
@@ -83,9 +106,10 @@ const industries = [
   },
   {
     id: "hospitality",
-    number: "05",
+    number: "06",
     title: "Hotels & Hospitality",
-    body: "Cleaning, food delivery and service robotics that support hotel operations, guest experience and back-of-house productivity.",
+    body:
+      "Cleaning, food delivery and service robotics that support hotel operations, guest experience and back-of-house productivity.",
     priorities: [
       "Guest experience",
       "Quiet and unobtrusive operation",
@@ -95,15 +119,16 @@ const industries = [
     capabilities: [
       "Autonomous public-area cleaning",
       "Food and room-service delivery",
-      "Service robotics",
+      "Guest-facing service robotics",
       "Deployment and staff training",
     ],
   },
   {
     id: "commercial-property",
-    number: "06",
+    number: "07",
     title: "Commercial Property",
-    body: "Autonomous cleaning and internal service robotics for office buildings, corporate campuses and managed commercial properties.",
+    body:
+      "Autonomous cleaning and internal service robotics for office buildings, corporate campuses and managed commercial properties.",
     priorities: [
       "Consistent service quality",
       "Large shared floor areas",
@@ -119,9 +144,10 @@ const industries = [
   },
   {
     id: "public-facilities",
-    number: "07",
+    number: "08",
     title: "Public Facilities",
-    body: "Cleaning and service robotics for museums, civic venues and public buildings with demanding visitor and presentation requirements.",
+    body:
+      "Cleaning and service robotics for museums, civic venues and public buildings with demanding visitor and presentation requirements.",
     priorities: [
       "Public safety",
       "High visitor traffic",
@@ -137,9 +163,10 @@ const industries = [
   },
   {
     id: "transport",
-    number: "08",
+    number: "09",
     title: "Transport Facilities",
-    body: "Autonomous cleaning and internal delivery systems for stations and transport environments with long operating hours and heavy public traffic.",
+    body:
+      "Autonomous cleaning and internal delivery systems for stations and transport environments with long operating hours and heavy public traffic.",
     priorities: [
       "Extended operating hours",
       "Heavy pedestrian traffic",
@@ -161,7 +188,7 @@ export default function IndustriesPage() {
       <PageHero
         kicker="INDUSTRIES"
         title="Automation shaped around the environment."
-        description="ERA Robotics deploys commercial cleaning, service delivery and industrial material delivery systems across complex operating environments."
+        description="ERA Robotics deploys autonomous cleaning, service and item delivery, and industrial material-movement systems across complex operating environments."
       />
 
       <nav
@@ -214,39 +241,39 @@ export default function IndustriesPage() {
                 </div>
               </div>
 
-<div className="industry-detail-body">
-  <p className="industry-detail-lead">{industry.body}</p>
+              <div className="industry-detail-body">
+                <p className="industry-detail-lead">{industry.body}</p>
 
-  <div className="industry-detail-columns">
-    <div>
-      <h3>Operational priorities</h3>
+                <div className="industry-detail-columns">
+                  <div>
+                    <h3>Operational priorities</h3>
 
-      <ul>
-        {industry.priorities.map((priority) => (
-          <li key={priority}>{priority}</li>
-        ))}
-      </ul>
-    </div>
+                    <ul>
+                      {industry.priorities.map((priority) => (
+                        <li key={priority}>{priority}</li>
+                      ))}
+                    </ul>
+                  </div>
 
-    <div>
-      <h3>ERA capabilities</h3>
+                  <div>
+                    <h3>ERA capabilities</h3>
 
-      <ul>
-        {industry.capabilities.map((capability) => (
-          <li key={capability}>{capability}</li>
-        ))}
-      </ul>
-    </div>
-  </div>
+                    <ul>
+                      {industry.capabilities.map((capability) => (
+                        <li key={capability}>{capability}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
 
-  <Link
-    href={`/contact?industry=${industry.id}`}
-    className="industry-detail-link"
-  >
-    Discuss {industry.title}
-    <span aria-hidden="true">↗</span>
-  </Link>
-</div>
+                <Link
+                  href={`/contact?industry=${industry.id}`}
+                  className="industry-detail-link"
+                >
+                  Discuss {industry.title}
+                  <span aria-hidden="true">↗</span>
+                </Link>
+              </div>
             </article>
           ))}
         </div>
@@ -258,14 +285,13 @@ export default function IndustriesPage() {
             <div>
               <p className="kicker">NOT SURE WHERE TO START?</p>
 
-              <h2>
-                Start with the workflow, not the machine.
-              </h2>
+              <h2>Start with the workflow, not the machine.</h2>
 
               <p>
                 ERA can assess your site, identify suitable automation
                 opportunities and define a practical deployment pathway for
-                cleaning, service delivery or industrial material movement.
+                cleaning, service and item delivery, or industrial material
+                movement.
               </p>
             </div>
 
