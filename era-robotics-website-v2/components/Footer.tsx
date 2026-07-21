@@ -8,11 +8,11 @@ export default function Footer() {
         <div className="footer-cta-copy">
           <p className="kicker">START A CONVERSATION</p>
 
-          <h2>Ready to build intelligent operations?</h2>
+          <h2>Ready to explore robotics for your operation?</h2>
 
           <p>
-            Talk with ERA Robotics about commercial robotics, Physical AI,
-            edge intelligence and enterprise automation.
+            Talk with ERA Robotics about commercial robotics, deployment,
+            integration and the pathway toward Physical AI.
           </p>
         </div>
 
@@ -35,30 +35,48 @@ export default function Footer() {
 
           <div className="footer-capabilities">
             <span>Commercial Robotics</span>
+            <span>Deployment &amp; Integration</span>
             <span>Physical AI</span>
-            <span>Enterprise Integration</span>
           </div>
 
-          <span className="footer-region">Australia &amp; New Zealand</span>
+          <span className="footer-region">
+            Australia &amp; New Zealand
+          </span>
         </div>
 
         <div className="footer-column">
           <h3>Solutions</h3>
 
-<Link href="/solutions#commercial-robotics">
-  Commercial Robotics
-</Link>
-          <Link href="/solutions#physical-ai">Physical AI</Link>
-          <Link href="/solutions#edge-ai">Edge Computing</Link>
-          <Link href="/solutions#integration">Integration Services</Link>
+          <Link href="/solutions">All Solutions</Link>
+
+          <Link href="/solutions#commercial-robotics">
+            Commercial Robotics
+          </Link>
+
+          <Link href="/solutions#deployment-integration">
+            Deployment &amp; Integration
+          </Link>
+
+          <Link href="/solutions#physical-ai">
+            Physical AI
+          </Link>
+
+          <Link href="/solutions#edge-intelligence">
+            Edge Intelligence
+          </Link>
+
+          <Link href="/solutions#computer-vision">
+            Computer Vision
+          </Link>
         </div>
 
         <div className="footer-column">
           <h3>Company</h3>
 
           <Link href="/about">About ERA</Link>
-          <Link href="/deployments">Deployments</Link>
           <Link href="/industries">Industries</Link>
+          <Link href="/products">Products</Link>
+          <Link href="/deployments">Deployments</Link>
           <Link href="/contact">Contact</Link>
         </div>
 
@@ -66,9 +84,9 @@ export default function Footer() {
           <h3>Resources</h3>
 
           <Link href="/resources">All Resources</Link>
-          <Link href="/resources/deployment-guide">Deployment Guides</Link>
-          <Link href="/resources/industry-brief">Industry Insights</Link>
-          <Link href="/resources/physical-ai">Physical AI</Link>
+          <Link href="/resources">Deployment Guides</Link>
+          <Link href="/resources">Industry Insights</Link>
+          <Link href="/resources">Physical AI</Link>
         </div>
       </div>
 
