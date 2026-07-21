@@ -1,939 +1,858 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title:
-    "Commercial Robots & AI Operations Platform | ERA Robotics Australia",
+  title: "Commercial Robotics Products | ERA Robotics Australia",
   description:
-    "Explore ERA Robotics commercial cleaning robots, service and delivery robots, industrial delivery AMRs and the ERA Intelligence Platform for multi-site robotic operations.",
-};
-
-type ProductSpec = {
-  label: string;
-  value: string;
+    "Explore ERA Robotics commercial cleaning robots, service and delivery robots, industrial delivery robots, and the ERA Intelligence Platform.",
 };
 
 type Product = {
+  id: string;
   name: string;
-  descriptor: string;
-  summary: string;
-  highlights: string[];
+  eyebrow: string;
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  features: string[];
   applications: string[];
-  specs?: ProductSpec[];
-  availability?: string;
+  tone?: "violet" | "blue" | "cyan" | "green" | "amber";
+  imageClassName?: string;
 };
 
-type ProductGroup = {
-  id: string;
+const cleaningProducts: Product[] = [
+  {
+    id: "cc1",
+    name: "CC1",
+    eyebrow: "Autonomous floor cleaning",
+    title: "Four cleaning modes. One intelligent platform.",
+    description:
+      "An autonomous commercial cleaning robot combining scrubbing, sweeping, vacuuming and dust mopping for hard floors and carpets.",
+    image: "/products/cc1.png",
+    imageAlt: "PUDU CC1 autonomous commercial cleaning robot",
+    features: [
+      "Scrubbing, sweeping, vacuuming and dust mopping",
+      "Automatic charging and water management",
+      "Dynamic environmental perception",
+      "Measurable cleaning reports",
+    ],
+    applications: [
+      "Retail",
+      "Education",
+      "Commercial buildings",
+      "Public facilities",
+    ],
+    tone: "blue",
+  },
+  {
+    id: "cc1-pro",
+    name: "CC1 Pro",
+    eyebrow: "AI-powered autonomous cleaning",
+    title: "Cleaning intelligence that responds in real time.",
+    description:
+      "An advanced autonomous cleaning robot combining AI perception, adaptive cleaning strategies and real-time performance monitoring.",
+    image: "/products/cc1-pro.png",
+    imageAlt: "PUDU CC1 Pro AI-powered commercial cleaning robot",
+    features: [
+      "AI spot scrubbing",
+      "Real-time cleaning performance detection",
+      "Adaptive floor and stain recognition",
+      "Cleaning component self-monitoring",
+    ],
+    applications: [
+      "Supermarkets",
+      "Healthcare",
+      "Education",
+      "Large commercial sites",
+    ],
+    tone: "violet",
+  },
+  {
+    id: "sh1",
+    name: "SH1",
+    eyebrow: "Smart upright scrubber dryer",
+    title: "Professional deep cleaning with intelligent control.",
+    description:
+      "A compact professional scrubber dryer engineered for difficult stains, edges, vertical surfaces and low-profile areas.",
+    image: "/products/sh1.png",
+    imageAlt: "PUDU SH1 smart upright commercial scrubber dryer",
+    features: [
+      "High brush pressure",
+      "Air, liquid and debris separation",
+      "Multi-dimensional cleaning",
+      "Real-time component monitoring",
+    ],
+    applications: [
+      "Hospitality",
+      "Retail",
+      "Commercial kitchens",
+      "Facility maintenance",
+    ],
+    tone: "cyan",
+    imageClassName: "product-image-sh1",
+  },
+];
+
+const mtSeries: Product[] = [
+  {
+    id: "mt1",
+    name: "MT1",
+    eyebrow: "AI-powered robotic sweeper",
+    title: "Large-scale autonomous sweeping for demanding venues.",
+    description:
+      "A professional robotic sweeper designed for large and complex environments, combining AI trash recognition with high-capacity debris collection.",
+    image: "/products/mt1.png",
+    imageAlt: "PUDU MT1 AI-powered robotic sweeper",
+    features: [
+      "AI trash recognition",
+      "AI spot cleaning",
+      "35-litre debris capacity",
+      "Continuous autonomous operation",
+    ],
+    applications: [
+      "Warehouses",
+      "Manufacturing",
+      "Transport facilities",
+      "Large public venues",
+    ],
+    tone: "green",
+  },
+  {
+    id: "mt1-vac",
+    name: "MT1 Vac",
+    eyebrow: "Robotic sweeper and vacuum",
+    title: "Powerful autonomous vacuuming across mixed floor types.",
+    description:
+      "A robotic vacuuming platform for carpets and hard floors, featuring adaptive floor recognition and a wide cleaning path.",
+    image: "/products/mt1-vac.png",
+    imageAlt: "PUDU MT1 Vac autonomous commercial vacuum robot",
+    features: [
+      "Dual-fan vacuum system",
+      "Carpet and hard-floor recognition",
+      "Wide 55 cm vacuuming path",
+      "Dust and waste separation",
+    ],
+    applications: [
+      "Hotels",
+      "Commercial buildings",
+      "Education",
+      "Carpeted facilities",
+    ],
+    tone: "blue",
+  },
+  {
+    id: "mt1-max",
+    name: "MT1 Max",
+    eyebrow: "Heavy-duty autonomous cleaning",
+    title: "Expanded capability for high-demand facilities.",
+    description:
+      "The most capable platform in the MT1 family, designed for intensive autonomous cleaning across expansive operational environments.",
+    image: "/products/mt1-max.png",
+    imageAlt: "PUDU MT1 Max autonomous commercial cleaning robot",
+    features: [
+      "High-capacity cleaning platform",
+      "AI-assisted environmental perception",
+      "Large-site autonomous navigation",
+      "Continuous fleet-ready operation",
+    ],
+    applications: [
+      "Warehouses",
+      "Industrial facilities",
+      "Transport hubs",
+      "Large-format retail",
+    ],
+    tone: "violet",
+  },
+];
+
+const bg1Product: Product = {
+  id: "bg1-series",
+  name: "BG1 Series",
+  eyebrow: "Outdoor grounds maintenance",
+  title: "Autonomous maintenance beyond the building.",
+  description:
+    "A robotic grounds-maintenance platform designed to extend autonomous facility operations into outdoor environments.",
+  image: "/products/bg1-series.png",
+  imageAlt: "PUDU BG1 Series autonomous outdoor grounds maintenance robot",
+  features: [
+    "Autonomous outdoor operation",
+    "Intelligent route planning",
+    "Large-area coverage",
+    "Fleet-ready deployment",
+  ],
+  applications: [
+    "Commercial campuses",
+    "Public facilities",
+    "Education campuses",
+    "Hospitality grounds",
+  ],
+  tone: "green",
+};
+
+const serviceProducts: Product[] = [
+  {
+    id: "bellabot-pro",
+    name: "BellaBot Pro",
+    eyebrow: "Premium delivery and engagement",
+    title: "Service delivery designed around the customer experience.",
+    description:
+      "A premium service robot combining stable delivery, intelligent navigation and digital engagement for customer-facing environments.",
+    image: "/products/bellabot-pro.png",
+    imageAlt: "PUDU BellaBot Pro premium service and delivery robot",
+    features: [
+      "Stable multi-tray delivery",
+      "Advanced obstacle perception",
+      "Digital advertising display",
+      "Multiple delivery and greeting modes",
+    ],
+    applications: [
+      "Hospitality",
+      "Restaurants",
+      "Retail",
+      "Healthcare",
+    ],
+    tone: "violet",
+    imageClassName: "product-image-tall",
+  },
+  {
+    id: "kettybot-pro",
+    name: "KettyBot Pro",
+    eyebrow: "Delivery and mobile engagement",
+    title: "Compact delivery with a visible brand presence.",
+    description:
+      "A customer-facing delivery platform combining autonomous movement, promotional content and interactive service workflows.",
+    image: "/products/kettybot-pro.png",
+    imageAlt: "PUDU KettyBot Pro service and advertising robot",
+    features: [
+      "Autonomous delivery",
+      "Mobile promotional display",
+      "Compact navigation footprint",
+      "Interactive customer engagement",
+    ],
+    applications: [
+      "Retail",
+      "Restaurants",
+      "Showrooms",
+      "Public venues",
+    ],
+    tone: "amber",
+    imageClassName: "product-image-tall",
+  },
+  {
+    id: "flashbot",
+    name: "FlashBot",
+    eyebrow: "Secure building delivery",
+    title: "Autonomous delivery across floors, doors and destinations.",
+    description:
+      "A secure building-delivery robot designed to navigate elevators, access-controlled areas and multi-floor facilities.",
+    image: "/products/flashbot.png",
+    imageAlt: "PUDU FlashBot secure multi-floor building delivery robot",
+    features: [
+      "Autonomous elevator integration",
+      "Secure adjustable compartments",
+      "Multi-floor map deployment",
+      "Door, turnstile and phone integration",
+    ],
+    applications: [
+      "Hotels",
+      "Hospitals",
+      "Commercial buildings",
+      "Residential facilities",
+    ],
+    tone: "blue",
+    imageClassName: "product-image-tall",
+  },
+];
+
+const industrialProducts: Product[] = [
+  {
+    id: "t300",
+    name: "T300",
+    eyebrow: "Industrial delivery robot",
+    title: "Flexible material movement for changing operations.",
+    description:
+      "A 300 kg industrial delivery platform supporting multiple transport configurations and rapid deployment across factories and warehouses.",
+    image: "/products/t300.png",
+    imageAlt: "PUDU T300 industrial autonomous delivery robot",
+    features: [
+      "Up to 300 kg payload",
+      "Multiple delivery configurations",
+      "VSLAM and LiDAR positioning",
+      "IoT and production workflow integration",
+    ],
+    applications: [
+      "Manufacturing",
+      "Warehouses",
+      "Production lines",
+      "Industrial logistics",
+    ],
+    tone: "amber",
+  },
+  {
+    id: "t600-series",
+    name: "T600 Series",
+    eyebrow: "Heavy-payload industrial delivery",
+    title: "Autonomous transport built for heavier workloads.",
+    description:
+      "A heavy-payload industrial robot family designed for rack transport, production logistics and high-capacity material movement.",
+    image: "/products/t600-series.png",
+    imageAlt: "PUDU T600 Series heavy-payload industrial delivery robot",
+    features: [
+      "Up to 600 kg payload",
+      "Standard and underride configurations",
+      "Rack recognition and autonomous handling",
+      "VDA5050-compatible fleet integration",
+    ],
+    applications: [
+      "Manufacturing",
+      "Warehousing",
+      "Distribution centres",
+      "Heavy material transport",
+    ],
+    tone: "cyan",
+  },
+];
+
+function ProductVisual({ product }: { product: Product }) {
+  return (
+    <div
+      className={`product-showcase-visual product-showcase-visual-${product.tone ?? "blue"}`}
+    >
+      <div className="product-showcase-orbit" aria-hidden="true" />
+      <div className="product-showcase-floor" aria-hidden="true" />
+
+      <Image
+        src={product.image}
+        alt={product.imageAlt}
+        width={1200}
+        height={1200}
+        sizes="(max-width: 760px) 92vw, (max-width: 1200px) 48vw, 620px"
+        className={`product-showcase-image ${product.imageClassName ?? ""}`}
+      />
+    </div>
+  );
+}
+
+function ProductContent({
+  product,
+  index,
+}: {
+  product: Product;
+  index: number;
+}) {
+  return (
+    <div className="product-showcase-content">
+      <div className="product-showcase-heading">
+        <span className="product-showcase-number">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
+        <div>
+          <span className="product-showcase-eyebrow">{product.eyebrow}</span>
+          <h3>{product.name}</h3>
+        </div>
+      </div>
+
+      <h4>{product.title}</h4>
+
+      <p className="product-showcase-description">{product.description}</p>
+
+      <div className="product-showcase-details">
+        <div>
+          <span className="product-detail-label">Key capabilities</span>
+
+          <ul className="product-capability-list">
+            {product.features.map((feature) => (
+              <li key={feature}>
+                <span aria-hidden="true" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <span className="product-detail-label">Applications</span>
+
+          <div className="product-application-list">
+            {product.applications.map((application) => (
+              <span key={application}>{application}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Link href="/contact" className="product-showcase-link">
+        Discuss this product
+        <span aria-hidden="true">↗</span>
+      </Link>
+    </div>
+  );
+}
+
+function ProductShowcase({
+  product,
+  index,
+  reverse = false,
+}: {
+  product: Product;
+  index: number;
+  reverse?: boolean;
+}) {
+  return (
+    <article
+      id={product.id}
+      className={`product-showcase ${reverse ? "product-showcase-reverse" : ""}`}
+    >
+      <ProductContent product={product} index={index} />
+      <ProductVisual product={product} />
+    </article>
+  );
+}
+
+function ProductLineHeader({
+  number,
+  eyebrow,
+  title,
+  description,
+}: {
   number: string;
   eyebrow: string;
   title: string;
-  introduction: string;
-  supportingCopy: string;
-  products: Product[];
-};
+  description: string;
+}) {
+  return (
+    <header className="product-line-header">
+      <div className="product-line-index">{number}</div>
 
-const productGroups: ProductGroup[] = [
-  {
-    id: "cleaning",
-    number: "01",
-    eyebrow: "COMMERCIAL CLEANING ROBOTICS",
-    title: "Cleaning systems for real operating environments.",
-    introduction:
-      "From compact autonomous floor care to large-area sweeping, vacuuming and scrubber-dryer applications, ERA provides cleaning systems selected around the floor type, facility layout and operational requirement.",
-    supportingCopy:
-      "The portfolio supports hard floors, carpets, mixed environments, targeted spot cleaning, large-scale dry sweeping and continuous autonomous operation.",
-    products: [
-      {
-        name: "PUDU CC1",
-        descriptor: "Intelligent Commercial Cleaning Robot",
-        summary:
-          "A versatile four-in-one autonomous cleaning robot combining scrubbing, sweeping, vacuuming and dust mopping in one compact platform.",
-        highlights: [
-          "Four-in-one cleaning",
-          "Hard-floor and carpet capability",
-          "Dynamic space perception",
-          "Automatic charging",
-          "Automatic water refill and drainage",
-          "Mobile water station option",
-        ],
-        applications: [
-          "Supermarkets",
-          "Education",
-          "Hotels",
-          "Commercial offices",
-          "Public facilities",
-          "Healthcare",
-        ],
-        specs: [
-          {
-            label: "Cleaning efficiency",
-            value: "700–1,000 m²/h",
-          },
-          {
-            label: "Clean water tank",
-            value: "15 L",
-          },
-          {
-            label: "Waste water tank",
-            value: "15 L",
-          },
-          {
-            label: "Minimum footprint",
-            value: "629 × 552 mm",
-          },
-        ],
-        availability: "Available for Australian and New Zealand deployments",
-      },
-      {
-        name: "PUDU CC1 Pro",
-        descriptor: "AI-Powered Autonomous Cleaning Robot",
-        summary:
-          "An advanced four-in-one cleaning platform that uses AI perception to identify spills, adapt cleaning intensity and monitor cleaning quality in real time.",
-        highlights: [
-          "AI spot scrubbing",
-          "Real-time cleaning performance detection",
-          "AI cleaning intensity control",
-          "Floor-type and stain detection",
-          "Cleaning component self-monitoring",
-          "VSLAM and LiDAR fusion positioning",
-        ],
-        applications: [
-          "Supermarkets",
-          "Retail centres",
-          "Large commercial buildings",
-          "Education",
-          "Healthcare",
-          "Enterprise facilities",
-        ],
-        specs: [
-          {
-            label: "Full-coverage cleaning",
-            value: "700–1,000 m²/h",
-          },
-          {
-            label: "AI spot cleaning",
-            value: "1,500–3,000 m²/h",
-          },
-          {
-            label: "Scrubbing runtime",
-            value: "Up to 5 h",
-          },
-          {
-            label: "Silent mopping runtime",
-            value: "Up to 9 h",
-          },
-        ],
-        availability: "Available for enterprise trials and deployments",
-      },
-      {
-        name: "PUDU SH1",
-        descriptor: "Smart Upright Scrubber Dryer",
-        summary:
-          "A connected upright scrubber dryer designed to combine strong stain removal with measurable cleaning, component monitoring and flexible manual operation.",
-        highlights: [
-          "27 kg brush pressure",
-          "20,000 Pa suction",
-          "Air-liquid-debris separation",
-          "Multi-dimensional cleaning",
-          "Real-time component monitoring",
-          "Measurable cleaning results",
-        ],
-        applications: [
-          "Retail",
-          "Hospitality",
-          "Education",
-          "Commercial kitchens",
-          "Facility teams",
-          "Detailed floor care",
-        ],
-        specs: [
-          {
-            label: "Cleaning productivity",
-            value: "1,100–1,600 m²/h",
-          },
-          {
-            label: "Working width",
-            value: "44 cm",
-          },
-          {
-            label: "Standard runtime",
-            value: "Approximately 70 min",
-          },
-          {
-            label: "ECO runtime",
-            value: "Approximately 100 min",
-          },
-        ],
-        availability: "Available as a smart manual cleaning platform",
-      },
-      {
-        name: "PUDU MT1",
-        descriptor: "AI-Powered Robotic Sweeper",
-        summary:
-          "A professional large-area dry-cleaning robot that uses AI trash recognition and spot cleaning to detect and remove debris across expansive facilities.",
-        highlights: [
-          "AI trash recognition",
-          "AI spot cleaning",
-          "35 L debris capacity",
-          "Active dust control",
-          "Large and small debris collection",
-          "Continuous autonomous operation",
-        ],
-        applications: [
-          "Warehouses",
-          "Manufacturing",
-          "Transport facilities",
-          "Distribution centres",
-          "Large public venues",
-          "Large campuses",
-        ],
-        specs: [
-          {
-            label: "Full-coverage cleaning",
-            value: "Up to 1,800 m²/h",
-          },
-          {
-            label: "Spot-cleaning performance",
-            value: "Up to 6,000 m²/h",
-          },
-          {
-            label: "Debris capacity",
-            value: "35 L",
-          },
-          {
-            label: "Runtime",
-            value: "4–8 h",
-          },
-        ],
-        availability: "Designed for large indoor commercial environments",
-      },
-      {
-        name: "PUDU MT1 Vac",
-        descriptor: "AI-Powered Robotic Sweeper & Vacuum",
-        summary:
-          "A wide-path autonomous vacuuming and sweeping platform that recognises carpet and hard floors and adapts its suction and brush settings in real time.",
-        highlights: [
-          "Carpet and hard-floor recognition",
-          "Dual-fan deep vacuuming",
-          "55 cm vacuuming path",
-          "14 L dust bags and 6 L trash bin",
-          "Quick-release dust-mop module",
-          "Hand-vacuum extension",
-        ],
-        applications: [
-          "Hotels",
-          "Commercial offices",
-          "Conference venues",
-          "Education",
-          "Public facilities",
-          "Mixed-floor environments",
-        ],
-        specs: [
-          {
-            label: "Cleaning performance",
-            value: "Up to 1,400 m²/h",
-          },
-          {
-            label: "Vacuuming width",
-            value: "55 cm",
-          },
-          {
-            label: "Runtime",
-            value: "3–6.5 h",
-          },
-          {
-            label: "Filtration",
-            value: "H11, optional H13",
-          },
-        ],
-        availability: "Available for carpeted and mixed-floor sites",
-      },
-      {
-        name: "PUDU MT1 Max",
-        descriptor: "AI-Powered 3D Perception Robotic Sweeper",
-        summary:
-          "A next-generation large-area robotic sweeper using enhanced 3D perception, adaptive AI cleaning and intelligent interaction for demanding commercial environments.",
-        highlights: [
-          "3D perception integration",
-          "AI adaptive cleaning",
-          "Magic Cleaning workflow",
-          "Intelligent active interaction",
-          "Enhanced obstacle avoidance",
-          "24/7 continuous operation",
-        ],
-        applications: [
-          "Large warehouses",
-          "Manufacturing",
-          "Distribution centres",
-          "Transport hubs",
-          "Large indoor venues",
-          "Complex industrial sites",
-        ],
-        specs: [
-          {
-            label: "Site coverage",
-            value: "Designed for sites up to 100,000 m²",
-          },
-          {
-            label: "Perception",
-            value: "AI-powered 3D perception",
-          },
-          {
-            label: "Operation model",
-            value: "Continuous autonomous cleaning",
-          },
-        ],
-        availability: "Contact ERA for product availability and deployment scope",
-      },
-      {
-        name: "PUDU BG1 Series",
-        descriptor: "AI-Native Large Scrubber-Dryer Robot",
-        summary:
-          "A large autonomous scrubber-dryer platform designed to sweep and scrub in a single pass while extending cleaning performance into edges and complex operating areas.",
-        highlights: [
-          "One-pass sweep and scrub",
-          "Extendable edge cleaning",
-          "AI Magic Cleaning",
-          "3D perception enhancement",
-          "Fast, user-friendly maintenance",
-          "24/7 continuous operation",
-        ],
-        applications: [
-          "Warehouses",
-          "Manufacturing",
-          "Large retail facilities",
-          "Transport facilities",
-          "Distribution centres",
-          "Large commercial floors",
-        ],
-        specs: [
-          {
-            label: "Cleaning type",
-            value: "Large-area sweep and scrub",
-          },
-          {
-            label: "Perception",
-            value: "AI-native 3D perception",
-          },
-          {
-            label: "Operating model",
-            value: "Continuous autonomous operation",
-          },
-        ],
-        availability: "Contact ERA for BG1 Series deployment planning",
-      },
-    ],
-  },
-  {
-    id: "service",
-    number: "02",
-    eyebrow: "SERVICE & DELIVERY ROBOTICS",
-    title: "Robots that move, engage and support service teams.",
-    introduction:
-      "ERA's service and delivery portfolio supports hospitality, retail, workplace and multi-storey building workflows where reliable movement and customer interaction are equally important.",
-    supportingCopy:
-      "Each platform serves a different operational role—from open-tray delivery and mobile marketing to secure compartment delivery across elevators and controlled-access areas.",
-    products: [
-      {
-        name: "BellaBot Pro",
-        descriptor: "Premium Delivery & Advertising Robot",
-        summary:
-          "A premium open-tray delivery robot combining smooth mobility, customer-facing interaction and a large digital display for advertising and promotional content.",
-        highlights: [
-          "Four open delivery trays",
-          "18.5-inch advertising display",
-          "Dish recognition and broadcast",
-          "Mobile marketing capability",
-          "Upgraded VSLAM navigation",
-          "Omni-sense obstacle detection",
-        ],
-        applications: [
-          "Restaurants",
-          "Hotels",
-          "Hospitality venues",
-          "Retail",
-          "Events",
-          "Customer engagement",
-        ],
-        specs: [
-          {
-            label: "Maximum payload",
-            value: "40 kg total",
-          },
-          {
-            label: "Payload per tray",
-            value: "10 kg",
-          },
-          {
-            label: "Path clearance",
-            value: "65 cm",
-          },
-          {
-            label: "Navigation",
-            value: "VSLAM and LiDAR SLAM",
-          },
-        ],
-        availability: "Available for hospitality and engagement deployments",
-      },
-      {
-        name: "KettyBot Pro",
-        descriptor: "Flexible Multitasker",
-        summary:
-          "A compact customer-facing robot designed to perform delivery, reception and marketing tasks in environments where manoeuvrability and visibility matter.",
-        highlights: [
-          "52 cm superior mobility",
-          "Delivery and reception workflows",
-          "Marketing and promotional display",
-          "Smart tray detection",
-          "Extended battery life",
-          "Customer attraction capability",
-        ],
-        applications: [
-          "Restaurants",
-          "Retail stores",
-          "Showrooms",
-          "Reception areas",
-          "Events",
-          "Customer service",
-        ],
-        specs: [
-          {
-            label: "Minimum path clearance",
-            value: "52 cm",
-          },
-          {
-            label: "Primary roles",
-            value: "Delivery, reception and marketing",
-          },
-          {
-            label: "Tray monitoring",
-            value: "Smart tray detection",
-          },
-        ],
-        availability: "Available for customer-facing commercial sites",
-      },
-      {
-        name: "FlashBot",
-        descriptor: "Building Delivery Expert",
-        summary:
-          "A secure multi-floor building delivery robot with configurable compartments, access verification and IoT integration for elevators, doors and turnstiles.",
-        highlights: [
-          "Autonomous elevator control",
-          "Cloud or hardware elevator integration",
-          "Secure adjustable compartments",
-          "Password, phone and NFC verification",
-          "Rapid multi-floor deployment",
-          "Door and turnstile integration",
-        ],
-        applications: [
-          "Hotels",
-          "Office buildings",
-          "Healthcare",
-          "Apartments",
-          "Multi-storey facilities",
-          "Secure internal delivery",
-        ],
-        specs: [
-          {
-            label: "Compartment configuration",
-            value: "2–4 adjustable compartments",
-          },
-          {
-            label: "Payload",
-            value: "10 kg per layer",
-          },
-          {
-            label: "Runtime",
-            value: "Up to 8 h",
-          },
-          {
-            label: "Minimum path clearance",
-            value: "70 cm",
-          },
-        ],
-        availability: "Available subject to building and elevator assessment",
-      },
-    ],
-  },
-  {
-    id: "industrial",
-    number: "03",
-    eyebrow: "INDUSTRIAL DELIVERY ROBOTICS",
-    title: "Autonomous material movement for industrial operations.",
-    introduction:
-      "The PUDU T Series supports repetitive material movement between storage, production and operational areas, reducing manual transport and improving workflow consistency.",
-    supportingCopy:
-      "Flexible top-module options, high payload capacities, industrial safety systems and integration capabilities allow the platforms to support a range of manufacturing and warehouse processes.",
-    products: [
-      {
-        name: "PUDU T300",
-        descriptor: "Industrial Delivery Robot",
-        summary:
-          "A flexible 300 kg industrial delivery robot designed for rapid deployment and configurable material movement across production and warehouse environments.",
-        highlights: [
-          "300 kg payload capacity",
-          "Standard, container, lifting and trolley modes",
-          "VSLAM and LiDAR fusion navigation",
-          "No environmental modification required",
-          "Elevator, access and production-line integration",
-          "ISO 3691-4 safety compliance",
-        ],
-        applications: [
-          "Manufacturing",
-          "Production lines",
-          "Warehouses",
-          "Internal logistics",
-          "Material replenishment",
-          "Component transport",
-        ],
-        specs: [
-          {
-            label: "Maximum payload",
-            value: "300 kg",
-          },
-          {
-            label: "Minimum clearance",
-            value: "60 cm",
-          },
-          {
-            label: "Charging time",
-            value: "Approximately 2 h",
-          },
-          {
-            label: "No-load runtime",
-            value: "Up to 12 h",
-          },
-        ],
-        availability: "Available for industrial workflow assessment",
-      },
-      {
-        name: "PUDU T600 Series",
-        descriptor: "Heavy-Payload Industrial Delivery Robot",
-        summary:
-          "A 600 kg industrial delivery platform available in standard and underride configurations for heavy material movement and integrated factory logistics.",
-        highlights: [
-          "600 kg payload capacity",
-          "Standard and underride configurations",
-          "Rack group recognition",
-          "Idle elevator priority scheduling",
-          "VDA5050 protocol support",
-          "On-premises deployment option",
-        ],
-        applications: [
-          "Heavy manufacturing",
-          "Warehouses",
-          "Distribution centres",
-          "Production logistics",
-          "Rack transport",
-          "Multi-floor industrial sites",
-        ],
-        specs: [
-          {
-            label: "Maximum payload",
-            value: "600 kg",
-          },
-          {
-            label: "Charging time",
-            value: "Approximately 2 h to 90%",
-          },
-          {
-            label: "No-load runtime",
-            value: "Up to 12 h",
-          },
-          {
-            label: "Navigation",
-            value: "VSLAM and LiDAR, model dependent",
-          },
-        ],
-        availability: "Available for heavy-payload industrial projects",
-      },
-    ],
-  },
-];
+      <div className="product-line-copy">
+        <span>{eyebrow}</span>
+        <h2>{title}</h2>
+      </div>
 
-const platformCapabilities = [
-  {
-    number: "01",
-    title: "Multi-site fleet visibility",
-    body: "View deployed robots across customer sites, regions and operating environments through one central interface.",
-  },
-  {
-    number: "02",
-    title: "Live operational monitoring",
-    body: "Monitor robot status, availability, activity and operational exceptions as they occur.",
-  },
-  {
-    number: "03",
-    title: "2D and 3D task replay",
-    body: "Review cleaning paths, completed areas, robot movement and task history using detailed operational maps.",
-  },
-  {
-    number: "04",
-    title: "Performance analytics",
-    body: "Track completed tasks, cleaned area, operational time, utilisation and other practical performance indicators.",
-  },
-  {
-    number: "05",
-    title: "Issue and supply management",
-    body: "Coordinate issues, maintenance requirements, supplies and follow-up activities across the deployed fleet.",
-  },
-  {
-    number: "06",
-    title: "Customer and site reporting",
-    body: "Organise robot information by customer and site while creating a clearer record of operational performance.",
-  },
-  {
-    number: "07",
-    title: "Agentic AI assistance",
-    body: "Use conversational AI to interpret fleet data, surface relevant information and support faster operational decisions.",
-  },
-  {
-    number: "08",
-    title: "Enterprise-ready architecture",
-    body: "Designed to support multi-site operations, managed service models and future integrations with broader robotic ecosystems.",
-  },
-];
-
-const platformModels = [
-  {
-    number: "01",
-    title: "Software subscription",
-    body: "Platform access structured around selected robots, sites or customer accounts.",
-  },
-  {
-    number: "02",
-    title: "Enterprise licence",
-    body: "A configured deployment for organisations requiring broader reporting, access control and operational visibility.",
-  },
-  {
-    number: "03",
-    title: "Managed robotic operations",
-    body: "ERA platform technology combined with remote monitoring, issue follow-up and operational support.",
-  },
-];
+      <p>{description}</p>
+    </header>
+  );
+}
 
 export default function ProductsPage() {
   return (
-    <main>
-      <PageHero
-        kicker="PRODUCTS"
-        title="Robotics and intelligence for real-world operations."
-        description="Explore ERA Robotics' portfolio of commercial cleaning, service delivery and industrial delivery systems, supported by an AI-powered platform for monitoring and managing robotic operations."
-      />
+    <main className="products-page">
+      <section className="products-hero">
+        <div className="products-hero-grid" aria-hidden="true" />
 
-      <nav className="products-subnav" aria-label="Product categories">
-        <div className="shell products-subnav-inner">
-          <a href="#cleaning">Cleaning</a>
-          <a href="#service">Service & Delivery</a>
-          <a href="#industrial">Industrial Delivery</a>
-          <a href="#intelligence">ERA Intelligence Platform</a>
-        </div>
-      </nav>
+        <div className="products-shell products-hero-inner">
+          <span className="products-hero-eyebrow">
+            ERA Robotics product portfolio
+          </span>
 
-      <section className="section products-intro-section">
-        <div className="shell products-intro">
-          <div className="products-intro-heading">
-            <p className="eyebrow">SELECTED AROUND THE OPERATION</p>
+          <h1>
+            Robotics built for
+            <span> real operations.</span>
+          </h1>
 
-            <h2>
-              Hardware, deployment
-              <br />
-              and operational intelligence.
-            </h2>
+          <p>
+            From autonomous commercial cleaning to secure building delivery,
+            industrial logistics and AI-powered fleet intelligence.
+          </p>
+
+          <div className="products-hero-actions">
+            <Link href="#commercial-cleaning" className="products-primary-button">
+              Explore products
+            </Link>
+
+            <Link href="/contact" className="products-secondary-button">
+              Talk to our team
+            </Link>
           </div>
+        </div>
 
-          <div className="products-intro-copy">
-            <p>
-              ERA Robotics works across the complete deployment lifecycle—from
-              selecting the right machine and assessing the site to
-              installation, training, ongoing support and operational
-              visibility.
-            </p>
-
-            <p>
-              Our product portfolio is built around real workflows, floor
-              conditions, payloads, building infrastructure and commercial
-              outcomes—not around a single robot or technology category.
-            </p>
+        <div className="products-hero-footer">
+          <div className="products-shell">
+            <span>Cleaning</span>
+            <span>Service</span>
+            <span>Industrial</span>
+            <span>Intelligence</span>
           </div>
         </div>
       </section>
 
-      <section className="products-catalogue">
-        <div className="shell">
-          {productGroups.map((group) => (
-            <section
-              className="product-category"
-              id={group.id}
-              key={group.id}
-            >
-              <header className="product-category-header">
-                <div className="product-category-title">
-                  <span className="row-number">{group.number}</span>
+      <nav className="products-subnav" aria-label="Product categories">
+        <div className="products-shell products-subnav-inner">
+          <span className="products-subnav-brand">Products</span>
 
-                  <div>
-                    <p className="eyebrow">{group.eyebrow}</p>
-                    <h2>{group.title}</h2>
-                  </div>
-                </div>
+          <div className="products-subnav-links">
+            <a href="#commercial-cleaning">Cleaning</a>
+            <a href="#service-delivery">Service</a>
+            <a href="#industrial-delivery">Industrial</a>
+            <a href="#intelligence-platform">Platform</a>
+          </div>
 
-                <div className="product-category-copy">
-                  <p>{group.introduction}</p>
-                  <p>{group.supportingCopy}</p>
-                </div>
-              </header>
+          <Link href="/contact">Enquire</Link>
+        </div>
+      </nav>
 
-              <div className="product-list">
-                {group.products.map((product, index) => (
-                  <article className="product-detail-card" key={product.name}>
-                    <div className="product-detail-index">
-                      {String(index + 1).padStart(2, "0")}
-                    </div>
+      <section className="products-introduction">
+        <div className="products-shell products-introduction-grid">
+          <span className="products-section-label">Complete portfolio</span>
 
-                    <div className="product-detail-main">
-                      <p className="product-detail-descriptor">
-                        {product.descriptor}
-                      </p>
+          <h2>
+            Hardware, deployment and intelligence brought together as one
+            operational system.
+          </h2>
 
-                      <h3>{product.name}</h3>
-
-                      <p className="product-detail-summary">
-                        {product.summary}
-                      </p>
-
-                      <div className="product-detail-actions">
-                        <Link
-                          className="product-card-link"
-                          href={`/contact?product=${encodeURIComponent(
-                            product.name,
-                          )}`}
-                        >
-                          Discuss this product
-                          <span aria-hidden="true">↗</span>
-                        </Link>
-                      </div>
-                    </div>
-
-                    <div className="product-detail-features">
-                      <p className="product-detail-label">Key capabilities</p>
-
-                      <ul>
-                        {product.highlights.map((highlight) => (
-                          <li key={highlight}>{highlight}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="product-detail-applications">
-                      <p className="product-detail-label">
-                        Suitable environments
-                      </p>
-
-                      <div className="product-tag-list">
-                        {product.applications.map((application) => (
-                          <span key={application}>{application}</span>
-                        ))}
-                      </div>
-
-                      {product.specs && (
-                        <dl className="product-spec-list">
-                          {product.specs.map((spec) => (
-                            <div key={spec.label}>
-                              <dt>{spec.label}</dt>
-                              <dd>{spec.value}</dd>
-                            </div>
-                          ))}
-                        </dl>
-                      )}
-
-                      {product.availability && (
-                        <p className="product-availability">
-                          {product.availability}
-                        </p>
-                      )}
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
-          ))}
+          <p>
+            ERA Robotics supports organisations from initial site assessment
+            and deployment through to training, service, optimisation and
+            multi-site expansion.
+          </p>
         </div>
       </section>
 
       <section
-        className="section intelligence-product-section"
-        id="intelligence"
+        id="commercial-cleaning"
+        className="product-line-section product-line-section-dark"
       >
-        <div className="shell">
-          <header className="intelligence-product-header">
-            <div className="intelligence-product-title">
-              <span className="row-number">04</span>
+        <div className="products-shell">
+          <ProductLineHeader
+            number="01"
+            eyebrow="Commercial cleaning robotics"
+            title="Autonomous cleaning for real-world facilities."
+            description="A portfolio spanning compact professional equipment, autonomous floor care and large-area robotic sweeping."
+          />
 
-              <div>
-                <p className="eyebrow">AGENTIC ROBOTICS PLATFORM</p>
-                <h2>ERA Intelligence Platform</h2>
-              </div>
-            </div>
-
-            <div className="intelligence-product-summary">
-              <p>
-                A unified operations platform for monitoring robotic fleets,
-                reviewing task performance and transforming live operational
-                data into actionable information.
-              </p>
-
-              <p>
-                Built for multi-site robotic operations and enhanced by
-                agentic AI assistance.
-              </p>
-            </div>
-          </header>
-
-<div className="intelligence-dashboard">
-  <div className="intelligence-dashboard-visual">
-    <div className="intelligence-dashboard-glow" aria-hidden="true" />
-
-    <div className="intelligence-dashboard-frame">
-      <div className="intelligence-dashboard-toolbar">
-        <div className="dashboard-window-controls" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
-
-        <div className="dashboard-toolbar-label">
-          ERA Intelligence Platform
-        </div>
-
-        <div className="dashboard-toolbar-status">
-          <span />
-          Platform online
-        </div>
-      </div>
-
-      <div className="intelligence-dashboard-image-wrap">
-        <Image
-          src="/era-intelligence-dashboard.png"
-          alt="Conceptual visual of the ERA Intelligence Platform for multi-site robotic fleet monitoring and AI-assisted operations"
-          width={1664}
-          height={928}
-          sizes="(max-width: 720px) 94vw, (max-width: 1200px) 90vw, 1400px"
-          className="intelligence-dashboard-image"
-          priority
-        />
-
-        <div
-          className="intelligence-dashboard-overlay"
-          aria-hidden="true"
-        />
-      </div>
-    </div>
-
-    <div className="dashboard-floating-card dashboard-floating-card-left">
-      <span className="dashboard-floating-label">Fleet visibility</span>
-      <strong>Multi-site operations</strong>
-      <small>Live status and task activity</small>
-    </div>
-
-    <div className="dashboard-floating-card dashboard-floating-card-right">
-      <span className="dashboard-ai-indicator" aria-hidden="true">
-        ✦
-      </span>
-
-      <div>
-        <span className="dashboard-floating-label">ERA AI</span>
-        <strong>Operational intelligence</strong>
-      </div>
-    </div>
-  </div>
-
-  <div className="intelligence-dashboard-caption">
-    <span>ERA Intelligence Platform</span>
-    <span>Conceptual product visual · Interface subject to development</span>
-  </div>
-</div>
-
-          <div className="platform-capability-grid">
-            {platformCapabilities.map((capability) => (
-              <article
-                className="platform-capability"
-                key={capability.title}
-              >
-                <span className="platform-capability-number">
-                  {capability.number}
-                </span>
-
-                <h3>{capability.title}</h3>
-                <p>{capability.body}</p>
-              </article>
+          <div className="product-showcase-list">
+            {cleaningProducts.map((product, index) => (
+              <ProductShowcase
+                key={product.id}
+                product={product}
+                index={index}
+                reverse={index % 2 === 1}
+              />
             ))}
           </div>
 
-          <div className="platform-positioning">
-            <div className="platform-positioning-heading">
-              <p className="eyebrow">COMMERCIAL DELIVERY MODELS</p>
-              <h3>
-                From software visibility
-                <br />
-                to managed robotic operations.
-              </h3>
+          <div className="product-family">
+            <div className="product-family-heading">
+              <span>MT1 Series</span>
+              <h3>One autonomous platform. Three specialised configurations.</h3>
+              <p>
+                Select the cleaning architecture that matches the floor type,
+                debris profile and operating environment.
+              </p>
             </div>
 
-            <div className="platform-models">
-              {platformModels.map((model) => (
-                <article key={model.title}>
-                  <span>{model.number}</span>
-                  <h4>{model.title}</h4>
-                  <p>{model.body}</p>
+            <div className="product-family-grid">
+              {mtSeries.map((product) => (
+                <article
+                  id={product.id}
+                  key={product.id}
+                  className={`product-family-card product-family-card-${product.tone}`}
+                >
+                  <div className="product-family-visual">
+                    <div className="product-family-glow" aria-hidden="true" />
+
+                    <Image
+                      src={product.image}
+                      alt={product.imageAlt}
+                      width={900}
+                      height={900}
+                      sizes="(max-width: 760px) 86vw, (max-width: 1100px) 42vw, 360px"
+                      className="product-family-image"
+                    />
+                  </div>
+
+                  <div className="product-family-content">
+                    <span>{product.eyebrow}</span>
+                    <h4>{product.name}</h4>
+                    <p>{product.description}</p>
+
+                    <ul>
+                      {product.features.slice(0, 3).map((feature) => (
+                        <li key={feature}>{feature}</li>
+                      ))}
+                    </ul>
+
+                    <Link href="/contact">
+                      Enquire about {product.name}
+                      <span aria-hidden="true">↗</span>
+                    </Link>
+                  </div>
                 </article>
               ))}
             </div>
           </div>
 
-          <div className="platform-note">
-            <p>
-              Platform compatibility, integrations and commercial structure
-              are assessed according to the robot fleet, deployment
-              environment and customer requirements.
-            </p>
-
-            <Link
-              className="product-card-link"
-              href="/contact?product=ERA%20Intelligence%20Platform"
-            >
-              Discuss the platform
-              <span aria-hidden="true">↗</span>
-            </Link>
+          <div className="standalone-product">
+            <ProductShowcase product={bg1Product} index={6} reverse />
           </div>
         </div>
       </section>
 
-      <section className="section products-selection-section">
-        <div className="shell products-selection">
-          <div>
-            <p className="eyebrow">SELECT THE RIGHT SYSTEM</p>
+      <section
+        id="service-delivery"
+        className="product-line-section product-line-section-light"
+      >
+        <div className="products-shell">
+          <ProductLineHeader
+            number="02"
+            eyebrow="Service and delivery robotics"
+            title="Autonomous delivery with a human-facing experience."
+            description="Robotic platforms for hospitality, retail, healthcare and secure multi-floor building operations."
+          />
 
-            <h2>Start with the workflow, not the machine.</h2>
+          <div className="product-showcase-list">
+            {serviceProducts.map((product, index) => (
+              <ProductShowcase
+                key={product.id}
+                product={product}
+                index={index}
+                reverse={index % 2 === 0}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <p>
-              Tell us about the site, floor conditions, workflow, payload,
-              infrastructure and required outcome. ERA can recommend a suitable
-              robotic system, deployment model and supporting technology.
-            </p>
+      <section
+        id="industrial-delivery"
+        className="product-line-section product-line-section-industrial"
+      >
+        <div className="products-shell">
+          <ProductLineHeader
+            number="03"
+            eyebrow="Industrial delivery robotics"
+            title="Material movement designed around production."
+            description="Autonomous industrial transport solutions for factories, warehouses, distribution centres and production workflows."
+          />
+
+          <div className="product-showcase-list">
+            {industrialProducts.map((product, index) => (
+              <ProductShowcase
+                key={product.id}
+                product={product}
+                index={index}
+                reverse={index % 2 === 1}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="intelligence-platform"
+        className="intelligence-platform-section"
+      >
+        <div className="products-shell">
+          <div className="intelligence-platform-intro">
+            <div>
+              <span className="products-section-label">
+                04 · AI operations platform
+              </span>
+
+              <h2>
+                Monitor.
+                <br />
+                Analyse.
+                <br />
+                Optimise.
+              </h2>
+            </div>
+
+            <div className="intelligence-platform-copy">
+              <h3>ERA Intelligence Platform</h3>
+
+              <p>
+                A unified operational layer designed to provide fleet
+                visibility, task intelligence and multi-site performance
+                oversight.
+              </p>
+
+              <div className="intelligence-capability-list">
+                <article>
+                  <span>01</span>
+                  <div>
+                    <h4>Fleet visibility</h4>
+                    <p>
+                      Review robot status, task progress and deployment activity
+                      across multiple locations.
+                    </p>
+                  </div>
+                </article>
+
+                <article>
+                  <span>02</span>
+                  <div>
+                    <h4>Operational intelligence</h4>
+                    <p>
+                      Transform robotic activity and task history into
+                      actionable operational insight.
+                    </p>
+                  </div>
+                </article>
+
+                <article>
+                  <span>03</span>
+                  <div>
+                    <h4>AI-assisted workflows</h4>
+                    <p>
+                      Build toward smarter task allocation, exception handling
+                      and facility-wide optimisation.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
 
-          <div className="button-row">
-            <Link className="pill pill-primary" href="/contact">
-              Discuss your requirements
-            </Link>
+          <div className="intelligence-dashboard">
+            <div className="intelligence-dashboard-visual">
+              <div
+                className="intelligence-dashboard-glow"
+                aria-hidden="true"
+              />
 
-            <Link className="pill" href="/solutions">
-              Explore solutions
-            </Link>
+              <div className="intelligence-dashboard-frame">
+                <div className="intelligence-dashboard-toolbar">
+                  <div
+                    className="dashboard-window-controls"
+                    aria-hidden="true"
+                  >
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+
+                  <div className="dashboard-toolbar-label">
+                    ERA Intelligence Platform
+                  </div>
+
+                  <div className="dashboard-toolbar-status">
+                    <span />
+                    Platform online
+                  </div>
+                </div>
+
+                <div className="intelligence-dashboard-image-wrap">
+                  <Image
+                    src="/era-intelligence-dashboard.png"
+                    alt="Conceptual ERA Intelligence Platform multi-site fleet operations dashboard"
+                    width={1664}
+                    height={928}
+                    sizes="(max-width: 720px) 94vw, (max-width: 1200px) 90vw, 1400px"
+                    className="intelligence-dashboard-image"
+                  />
+
+                  <div
+                    className="intelligence-dashboard-overlay"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+
+              <div className="dashboard-floating-card dashboard-floating-card-left">
+                <span className="dashboard-floating-label">
+                  Fleet visibility
+                </span>
+                <strong>Multi-site operations</strong>
+                <small>Live status and task activity</small>
+              </div>
+
+              <div className="dashboard-floating-card dashboard-floating-card-right">
+                <span className="dashboard-ai-indicator" aria-hidden="true">
+                  ✦
+                </span>
+
+                <div>
+                  <span className="dashboard-floating-label">ERA AI</span>
+                  <strong>Operational intelligence</strong>
+                </div>
+              </div>
+            </div>
+
+            <div className="intelligence-dashboard-caption">
+              <span>ERA Intelligence Platform</span>
+              <span>
+                Conceptual product visual · Interface subject to development
+              </span>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section className="products-delivery-model">
+        <div className="products-shell">
+          <div className="products-delivery-heading">
+            <span className="products-section-label">
+              More than the hardware
+            </span>
+
+            <h2>
+              Robotics deployment designed around operational outcomes.
+            </h2>
+          </div>
+
+          <div className="products-delivery-grid">
+            <article>
+              <span>01</span>
+              <h3>Site assessment</h3>
+              <p>
+                Evaluate workflows, floor conditions, traffic patterns and
+                operational requirements before deployment.
+              </p>
+            </article>
+
+            <article>
+              <span>02</span>
+              <h3>Deployment</h3>
+              <p>
+                Configure maps, tasks, integrations and operating procedures
+                around the real facility.
+              </p>
+            </article>
+
+            <article>
+              <span>03</span>
+              <h3>Training and adoption</h3>
+              <p>
+                Support site teams with practical training, workflow design and
+                change management.
+              </p>
+            </article>
+
+            <article>
+              <span>04</span>
+              <h3>Service and optimisation</h3>
+              <p>
+                Maintain performance through technical support, servicing and
+                ongoing operational review.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="products-cta">
+        <div className="products-cta-glow" aria-hidden="true" />
+
+        <div className="products-shell products-cta-inner">
+          <span>Start with your operational challenge</span>
+
+          <h2>
+            Find the right robotics platform for your facility.
+          </h2>
+
+          <p>
+            Tell us about your site, workflow and deployment goals. Our team can
+            help evaluate the right product and implementation approach.
+          </p>
+
+          <Link href="/contact" className="products-primary-button">
+            Talk to ERA Robotics
+            <span aria-hidden="true">↗</span>
+          </Link>
         </div>
       </section>
     </main>
