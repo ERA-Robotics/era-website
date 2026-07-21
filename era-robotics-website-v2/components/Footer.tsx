@@ -57,7 +57,7 @@ export default function Footer() {
           <h3>Company</h3>
 
           <Link href="/about">About ERA</Link>
-          <Link href="/case-studies">Case Studies</Link>
+          <Link href="/deployments">Deployments</Link>
           <Link href="/industries">Industries</Link>
           <Link href="/contact">Contact</Link>
         </div>
