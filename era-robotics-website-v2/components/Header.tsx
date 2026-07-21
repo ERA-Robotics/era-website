@@ -5,7 +5,7 @@ const links = [
   ["Solutions", "/solutions"],
   ["Industries", "/industries"],
   ["Products", "/products"],
-  ["Case Studies", "/case-studies"],
+  ["Deployments", "/deployments"],
   ["Resources", "/resources"],
   ["About", "/about"]
 ];
