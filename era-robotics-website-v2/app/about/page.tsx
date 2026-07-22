@@ -124,53 +124,55 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="shell editorial-grid">
-          <div>
-            <p className="kicker">OUR APPROACH</p>
+<section
+  className="section approach-section"
+  aria-labelledby="approach-title"
+>
+  <div className="shell approach-layout">
+    <div className="approach-intro">
+      <p className="kicker">OUR APPROACH</p>
 
-            <h2>
-              Technology must fit the site, workflow and people.
-            </h2>
+      <h2 id="approach-title">
+        Technology must fit the operation.
+      </h2>
+
+      <p className="approach-lead">
+        Robotics succeeds when it is designed around the site, workflow and
+        people—not treated as a standalone piece of hardware.
+      </p>
+
+      <p className="approach-copy">
+        ERA combines technology selection, workflow design, commissioning,
+        training and lifecycle support so that automation becomes part of
+        normal daily operation.
+      </p>
+
+      <div className="approach-flow" aria-label="ERA deployment approach">
+        <span>Site</span>
+        <i aria-hidden="true">→</i>
+        <span>Workflow</span>
+        <i aria-hidden="true">→</i>
+        <span>People</span>
+        <i aria-hidden="true">→</i>
+        <span>Technology</span>
+      </div>
+    </div>
+
+    <div className="approach-principles">
+      {principles.map((principle) => (
+        <article className="approach-card" key={principle.number}>
+          <div className="approach-card-top">
+            <span className="approach-number">{principle.number}</span>
+            <span className="approach-marker" aria-hidden="true" />
           </div>
 
-          <div>
-            <p>
-              Robotics succeeds when it is treated as part of an operating
-              system—not as a standalone piece of hardware.
-            </p>
-
-            <p>
-              That means understanding traffic patterns, floor conditions,
-              safety requirements, staff responsibilities, operating hours,
-              infrastructure and service expectations before deployment.
-            </p>
-
-            <p>
-              ERA combines technology selection with workflow design,
-              commissioning, training and support so that automation can
-              become part of normal daily operation.
-            </p>
-          </div>
-        </div>
-
-        <div className="shell">
-          <div className="why-era-list">
-            {principles.map((principle) => (
-              <article key={principle.number}>
-                <span className="why-era-number">
-                  {principle.number}
-                </span>
-
-                <div>
-                  <h3>{principle.title}</h3>
-                  <p>{principle.body}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+          <h3>{principle.title}</h3>
+          <p>{principle.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section className="section section-alt">
         <div className="shell editorial-grid">
