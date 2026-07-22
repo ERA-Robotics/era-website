@@ -1,3 +1,4 @@
+import IndustriesShowcase from "@/components/IndustriesShowcase";
 import Link from "next/link";
 
 const solutions = [
@@ -304,88 +305,7 @@ export default function Home() {
         </div>
       </section>
 
-<section className="section section-alt industries-section">
-  <div className="shell">
-    <div className="section-heading-row">
-      <div>
-        <p className="kicker">INDUSTRIES</p>
-
-        <h2>Automation shaped around real operating environments.</h2>
-      </div>
-
-      <p className="section-copy">
-        Every environment has different workflows, risks, service
-        expectations and physical constraints. ERA selects and deploys
-        robotic systems around the operation—not the other way around.
-      </p>
-    </div>
-
-    <div className="industries-layout">
-      <Link
-        href={industries[0].href}
-        className="industry-feature industry-feature-photo"
-        style={{
-          backgroundImage: `url(${industries[0].image})`,
-        }}
-      >
-        <div
-          className="industry-photo-overlay"
-          aria-hidden="true"
-        />
-
-        <div className="industry-feature-top">
-          <span className="industry-index">01</span>
-
-          <span className="industry-arrow" aria-hidden="true">
-            ↗
-          </span>
-        </div>
-
-        <div className="industry-feature-copy">
-          <p className="industry-label">FEATURED INDUSTRY</p>
-
-          <h3>{industries[0].title}</h3>
-
-          <p>{industries[0].body}</p>
-        </div>
-      </Link>
-
-      <div className="industry-list">
-        {industries.slice(1).map((industry, index) => (
-          <Link
-            href={industry.href}
-            className="industry-list-item industry-list-item-photo"
-            key={industry.title}
-          >
-            <span className="industry-index">
-              {String(index + 2).padStart(2, "0")}
-            </span>
-
-            <div
-              className="industry-list-thumbnail"
-              aria-hidden="true"
-            >
-              <span
-                style={{
-                  backgroundImage: `url(${industry.image})`,
-                }}
-              />
-            </div>
-
-            <div className="industry-list-copy">
-              <h3>{industry.title}</h3>
-              <p>{industry.body}</p>
-            </div>
-
-            <span className="industry-arrow" aria-hidden="true">
-              ↗
-            </span>
-          </Link>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+<IndustriesShowcase />
 
       <section className="section physical-ai-section">
         <div className="shell">
