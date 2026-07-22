@@ -605,33 +605,34 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="resources-layout">
+    <div className="resources-grid">
       <Link
         href="/resources"
-        className="resource-feature"
+        className="resource-card resource-large"
       >
-        <div className="resource-feature-top">
+        <div className="resource-top">
           <span>GUIDE</span>
           <span>12 MIN READ</span>
         </div>
 
         <div
-          className="resource-document-visual"
+          className="resource-blueprint"
           aria-hidden="true"
         >
-          <div className="resource-document-grid" />
+          <div className="resource-blueprint-grid" />
 
-          <span className="resource-document-line resource-line-one" />
-          <span className="resource-document-line resource-line-two" />
-          <span className="resource-document-line resource-line-three" />
+          <span className="resource-blueprint-line resource-blueprint-line-one" />
+          <span className="resource-blueprint-line resource-blueprint-line-two" />
+          <span className="resource-blueprint-line resource-blueprint-line-three" />
 
-          <span className="resource-document-node resource-node-one" />
-          <span className="resource-document-node resource-node-two" />
+          <span className="resource-blueprint-node resource-blueprint-node-one" />
+          <span className="resource-blueprint-node resource-blueprint-node-two" />
+          <span className="resource-blueprint-node resource-blueprint-node-three" />
 
-          <span className="resource-document-index">01</span>
+          <span className="resource-blueprint-index">01</span>
         </div>
 
-        <div className="resource-feature-content">
+        <div className="resource-content">
           <p className="resource-category">
             ENTERPRISE DEPLOYMENT
           </p>
@@ -660,102 +661,85 @@ export default function Home() {
         </span>
       </Link>
 
-      <div className="resource-editorial">
-        <div className="resource-editorial-heading">
-          <p>LATEST INSIGHTS</p>
-          <span>02</span>
+      <Link href="/resources" className="resource-card">
+        <div className="resource-top">
+          <span>BRIEF</span>
+          <span>6 MIN READ</span>
         </div>
 
-        <div className="resource-editorial-list">
-          <Link
-            href="/resources"
-            className="resource-editorial-item"
-          >
-            <div className="resource-editorial-meta">
-              <span>02</span>
-              <span>BRIEF</span>
-              <span>6 MIN READ</span>
-            </div>
-
-            <div className="resource-editorial-content">
-              <p className="resource-category">
-                INDUSTRY INSIGHT
-              </p>
-
-              <h3>
-                Choosing the right robotics system for enterprise operations.
-              </h3>
-
-              <p>
-                Evaluation criteria that extend beyond hardware
-                specifications and headline performance.
-              </p>
-
-              <div className="resource-editorial-tags">
-                <span>System Selection</span>
-                <span>Operations</span>
-              </div>
-            </div>
-
-            <span
-              className="resource-editorial-arrow"
-              aria-hidden="true"
-            >
-              ↗
-            </span>
-          </Link>
-
-          <Link
-            href="/resources"
-            className="resource-editorial-item"
-          >
-            <div className="resource-editorial-meta">
-              <span>03</span>
-              <span>ARTICLE</span>
-              <span>8 MIN READ</span>
-            </div>
-
-            <div className="resource-editorial-content">
-              <p className="resource-category">
-                PHYSICAL AI
-              </p>
-
-              <h3>
-                From commercial robotics to intelligent physical systems.
-              </h3>
-
-              <p>
-                Understanding how enterprise automation is evolving toward
-                perception, intelligence and adaptive physical systems.
-              </p>
-
-              <div className="resource-editorial-tags">
-                <span>Physical AI</span>
-                <span>Edge Intelligence</span>
-              </div>
-            </div>
-
-            <span
-              className="resource-editorial-arrow"
-              aria-hidden="true"
-            >
-              ↗
-            </span>
-          </Link>
-        </div>
-
-        <div className="resource-editorial-footer">
-          <p>
-            Practical thinking for teams evaluating, deploying and scaling
-            enterprise robotics.
+        <div className="resource-content">
+          <p className="resource-category">
+            INDUSTRY INSIGHT
           </p>
 
-          <Link href="/resources" className="text-link">
-            View all resources
-            <span aria-hidden="true">↗</span>
-          </Link>
+          <h3>
+            Choosing the right robotics system for enterprise operations.
+          </h3>
+
+          <p className="resource-description">
+            Evaluation criteria that extend beyond hardware specifications
+            and headline performance.
+          </p>
+
+          <div className="resource-tags">
+            <span>System Selection</span>
+            <span>Operations</span>
+          </div>
         </div>
-      </div>
+
+        <span
+          className="resource-arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
+      </Link>
+
+      <Link href="/resources" className="resource-card">
+        <div className="resource-top">
+          <span>ARTICLE</span>
+          <span>8 MIN READ</span>
+        </div>
+
+        <div className="resource-content">
+          <p className="resource-category">
+            PHYSICAL AI
+          </p>
+
+          <h3>
+            From commercial robotics to intelligent physical systems.
+          </h3>
+
+          <p className="resource-description">
+            Understanding how enterprise automation is evolving toward
+            perception, intelligence and adaptive physical systems.
+          </p>
+
+          <div className="resource-tags">
+            <span>Physical AI</span>
+            <span>Edge Intelligence</span>
+          </div>
+        </div>
+
+        <span
+          className="resource-arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
+      </Link>
+    </div>
+
+    <div className="resources-footer">
+      <p>
+        Practical thinking for teams evaluating, deploying and scaling
+        enterprise robotics.
+      </p>
+
+      <Link href="/resources" className="text-link">
+        View the resource library
+        <span aria-hidden="true">↗</span>
+      </Link>
     </div>
   </div>
 </section>
