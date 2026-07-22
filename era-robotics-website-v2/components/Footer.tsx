@@ -1,6 +1,43 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 
+const solutionLinks = [
+  {
+    label: "Commercial Robotics",
+    href: "/solutions#commercial-robotics",
+  },
+  {
+    label: "Deployment & Integration",
+    href: "/solutions#deployment-integration",
+  },
+  {
+    label: "Physical AI",
+    href: "/solutions#physical-ai",
+  },
+  {
+    label: "Edge Intelligence",
+    href: "/solutions#edge-intelligence",
+  },
+  {
+    label: "Computer Vision",
+    href: "/solutions#computer-vision",
+  },
+];
+
+const exploreLinks = [
+  { label: "Products", href: "/products" },
+  { label: "Industries", href: "/industries" },
+  { label: "Deployments", href: "/deployments" },
+  { label: "Resources", href: "/resources" },
+];
+
+const companyLinks = [
+  { label: "About ERA", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+];
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -44,50 +81,37 @@ export default function Footer() {
           </span>
         </div>
 
-        <div className="footer-column">
+        <nav className="footer-column" aria-label="Solutions">
           <h3>Solutions</h3>
 
           <Link href="/solutions">All Solutions</Link>
 
-          <Link href="/solutions#commercial-robotics">
-            Commercial Robotics
-          </Link>
+          {solutionLinks.map((item) => (
+            <Link key={item.href} href={item.href}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
-          <Link href="/solutions#deployment-integration">
-            Deployment &amp; Integration
-          </Link>
+        <nav className="footer-column" aria-label="Explore">
+          <h3>Explore</h3>
 
-          <Link href="/solutions#physical-ai">
-            Physical AI
-          </Link>
+          {exploreLinks.map((item) => (
+            <Link key={item.href} href={item.href}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
-          <Link href="/solutions#edge-intelligence">
-            Edge Intelligence
-          </Link>
-
-          <Link href="/solutions#computer-vision">
-            Computer Vision
-          </Link>
-        </div>
-
-        <div className="footer-column">
+        <nav className="footer-column" aria-label="Company">
           <h3>Company</h3>
 
-          <Link href="/about">About ERA</Link>
-          <Link href="/industries">Industries</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/deployments">Deployments</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-
-        <div className="footer-column">
-          <h3>Resources</h3>
-
-          <Link href="/resources">All Resources</Link>
-          <Link href="/resources">Deployment Guides</Link>
-          <Link href="/resources">Industry Insights</Link>
-          <Link href="/resources">Physical AI</Link>
-        </div>
+          {companyLinks.map((item) => (
+            <Link key={item.href} href={item.href}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </div>
 
       <div className="shell footer-bottom">
@@ -96,9 +120,6 @@ export default function Footer() {
         </span>
 
         <div className="footer-legal">
-          <Link href="/privacy">Privacy</Link>
-          <Link href="/terms">Terms</Link>
-
           <a
             href="https://www.linkedin.com/company/erarobotics"
             target="_blank"
