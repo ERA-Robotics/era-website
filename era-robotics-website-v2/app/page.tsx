@@ -458,9 +458,9 @@ export default function Home() {
             </div>
 
             <p className="section-copy">
-              Selected projects are presented by operating environment and
-              solution type. Detailed customer references are available
-              privately, subject to confidentiality requirements.
+              Projects are presented by operating environment rather than customer
+  identity. Detailed references are available privately where disclosure
+  has been approved.
             </p>
           </div>
 
