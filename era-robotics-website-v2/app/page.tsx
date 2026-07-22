@@ -259,200 +259,189 @@ export default function Home() {
 
 <IndustriesShowcase />
 
-      <section className="section physical-ai-section">
-        <div className="shell">
-          <div className="physical-ai-heading">
-            <div>
-              <p className="kicker">PHYSICAL AI DIRECTION</p>
+<section className="section physical-ai-section roadmap-section">
+  <div className="shell">
+    <div className="roadmap-heading">
+      <div>
+        <p className="kicker">OUR DIRECTION</p>
 
-              <h2>
-                Building toward connected intelligence for physical
-                operations.
-              </h2>
-            </div>
+        <h2>
+          From commercial robotics to connected physical intelligence.
+        </h2>
+      </div>
 
-            <div>
-              <p className="section-copy">
-                ERA is developing toward an operating model where commercial
-                robotics, computer vision, edge intelligence and enterprise
-                workflows can function as connected systems.
-              </p>
+      <div>
+        <p className="section-copy">
+          ERA delivers practical robotic systems today while developing the
+          vision, edge intelligence and workflow integration capabilities
+          required for more connected and adaptive physical operations.
+        </p>
 
-              <Link
-                href="/solutions#physical-ai"
-                className="text-link"
-              >
-                Explore the Physical AI direction
-                <span aria-hidden="true">↗</span>
-              </Link>
-            </div>
-          </div>
+        <Link
+          href="/solutions#physical-ai"
+          className="text-link"
+        >
+          Explore the Physical AI direction
+          <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
+    </div>
 
-          <div className="era-platform">
-            <div className="platform-column platform-inputs">
-              <p className="platform-label">PHYSICAL OPERATIONS</p>
+    <div className="technology-roadmap">
+      <article className="roadmap-stage roadmap-stage-current">
+        <div className="roadmap-stage-header">
+          <span className="roadmap-stage-number">01</span>
 
-              <div className="platform-module">
-                <span>01</span>
-
-                <div>
-                  <h3>Commercial Robotics</h3>
-
-                  <p>
-                    Cleaning, service delivery and material-movement systems.
-                  </p>
-                </div>
-              </div>
-
-              <div className="platform-module">
-                <span>02</span>
-
-                <div>
-                  <h3>Vision & Sensors</h3>
-
-                  <p>
-                    Emerging perception capabilities and environmental data.
-                  </p>
-                </div>
-              </div>
-
-              <div className="platform-module">
-                <span>03</span>
-
-                <div>
-                  <h3>Operational Context</h3>
-
-                  <p>
-                    Site conditions, workflows, people and operating
-                    constraints.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="platform-core">
-              <div
-                className="core-orbit core-orbit-one"
-                aria-hidden="true"
-              />
-
-              <div
-                className="core-orbit core-orbit-two"
-                aria-hidden="true"
-              />
-
-              <div className="core-glow" aria-hidden="true" />
-
-              <div className="core-content">
-                <span className="core-kicker">ERA</span>
-
-                <h3>Integration Vision</h3>
-
-                <p>
-                  A future framework connecting robotic systems, local
-                  intelligence and enterprise workflows.
-                </p>
-
-                <div className="core-capabilities">
-                  <span>Deployment</span>
-                  <span>Edge Intelligence</span>
-                  <span>Computer Vision</span>
-                  <span>Workflow Integration</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="platform-column platform-outputs">
-              <p className="platform-label">OPERATIONAL OUTCOMES</p>
-
-              <div className="platform-module">
-                <span>04</span>
-
-                <div>
-                  <h3>Connected Workflows</h3>
-
-                  <p>
-                    Robotics operating within established enterprise
-                    processes.
-                  </p>
-                </div>
-              </div>
-
-              <div className="platform-module">
-                <span>05</span>
-
-                <div>
-                  <h3>Operational Visibility</h3>
-
-                  <p>
-                    Performance information and system visibility where
-                    supported.
-                  </p>
-                </div>
-              </div>
-
-              <div className="platform-module">
-                <span>06</span>
-
-                <div>
-                  <h3>Future Intelligence</h3>
-
-                  <p>
-                    Architecture designed to support more adaptive robotic
-                    operation over time.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="physical-ai-pillars">
-            <article>
-              <span>01</span>
-
-              <h3>Perceive</h3>
-
-              <p>
-                Robotic systems use sensors and emerging vision capabilities
-                to understand their operating environment.
-              </p>
-            </article>
-
-            <article>
-              <span>02</span>
-
-              <h3>Interpret</h3>
-
-              <p>
-                Local intelligence can help systems interpret conditions and
-                respond more effectively.
-              </p>
-            </article>
-
-            <article>
-              <span>03</span>
-
-              <h3>Act</h3>
-
-              <p>
-                Robotics performs defined tasks within real commercial and
-                industrial operations.
-              </p>
-            </article>
-
-            <article>
-              <span>04</span>
-
-              <h3>Improve</h3>
-
-              <p>
-                Deployment data and operational feedback can support ongoing
-                workflow optimisation.
-              </p>
-            </article>
+          <div>
+            <p className="roadmap-stage-label">TODAY</p>
+            <h3>Practical deployment</h3>
           </div>
         </div>
-      </section>
+
+        <p className="roadmap-stage-copy">
+          Commercial robotic systems deployed into real operating
+          environments with local assessment, commissioning and support.
+        </p>
+
+        <div className="roadmap-capability-list">
+          <div className="roadmap-capability">
+            <span>01</span>
+
+            <div>
+              <h4>Commercial Robotics</h4>
+
+              <p>
+                Cleaning, service delivery and material-movement systems for
+                commercial and industrial operations.
+              </p>
+            </div>
+          </div>
+
+          <div className="roadmap-capability">
+            <span>02</span>
+
+            <div>
+              <h4>Deployment &amp; Integration</h4>
+
+              <p>
+                Site assessment, workflow design, mapping, commissioning,
+                training and ongoing support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div className="roadmap-connector" aria-hidden="true">
+        <span />
+        <span>→</span>
+        <span />
+      </div>
+
+      <article className="roadmap-stage roadmap-stage-developing">
+        <div className="roadmap-stage-header">
+          <span className="roadmap-stage-number">02</span>
+
+          <div>
+            <p className="roadmap-stage-label">NOW DEVELOPING</p>
+            <h3>Connected operations</h3>
+          </div>
+        </div>
+
+        <p className="roadmap-stage-copy">
+          Building the technical capabilities that allow robotic systems to
+          perceive more, process information locally and operate within
+          connected workflows.
+        </p>
+
+        <div className="roadmap-capability-list">
+          <div className="roadmap-capability">
+            <span>03</span>
+
+            <div>
+              <h4>Computer Vision</h4>
+
+              <p>
+                Environmental awareness, visual detection and operational
+                perception.
+              </p>
+            </div>
+          </div>
+
+          <div className="roadmap-capability">
+            <span>04</span>
+
+            <div>
+              <h4>Edge Intelligence</h4>
+
+              <p>
+                Local processing designed for faster and more resilient
+                decision-making.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div className="roadmap-connector" aria-hidden="true">
+        <span />
+        <span>→</span>
+        <span />
+      </div>
+
+      <article className="roadmap-stage roadmap-stage-future">
+        <div className="roadmap-stage-header">
+          <span className="roadmap-stage-number">03</span>
+
+          <div>
+            <p className="roadmap-stage-label">FUTURE DIRECTION</p>
+            <h3>Physical AI</h3>
+          </div>
+        </div>
+
+        <p className="roadmap-stage-copy">
+          A future operating model where perception, intelligence and physical
+          action function as a connected system.
+        </p>
+
+        <div className="roadmap-future-core">
+          <div className="roadmap-orbit roadmap-orbit-one" aria-hidden="true" />
+          <div className="roadmap-orbit roadmap-orbit-two" aria-hidden="true" />
+
+          <div className="roadmap-core-content">
+            <span>ERA</span>
+
+            <strong>Physical Intelligence</strong>
+
+            <p>
+              Perceive. Interpret. Act. Improve.
+            </p>
+          </div>
+        </div>
+
+        <div className="roadmap-future-tags">
+          <span>Adaptive Operations</span>
+          <span>Connected Workflows</span>
+          <span>Local Intelligence</span>
+          <span>Continuous Improvement</span>
+        </div>
+      </article>
+    </div>
+
+    <div className="roadmap-statement">
+      <p>
+        Today&apos;s commercial robotics.
+        <br />
+        Tomorrow&apos;s connected physical intelligence.
+      </p>
+
+      <span>
+        Built through practical deployment, local integration and continuous
+        development.
+      </span>
+    </div>
+  </div>
+</section>
 
       <section className="section case-study-section">
         <div className="shell">
