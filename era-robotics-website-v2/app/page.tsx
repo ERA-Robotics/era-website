@@ -84,10 +84,9 @@ const deployments = [
     number: "01",
     industry: "MANUFACTURING",
     label: "CONTROLLED OPERATING ENVIRONMENT",
-    title:
-      "Autonomous cleaning supporting pharmaceutical manufacturing operations.",
+    title: "Autonomous cleaning for pharmaceutical manufacturing.",
     body:
-      "A structured deployment designed around floor conditions, production continuity, safety requirements and reliable day-to-day operation.",
+      "Structured around controlled production environments, floor conditions, safety requirements and reliable day-to-day operation.",
     tags: [
       "Autonomous Cleaning",
       "Site Configuration",
@@ -99,22 +98,26 @@ const deployments = [
     number: "02",
     industry: "PUBLIC FACILITIES",
     label: "VISITOR ENVIRONMENT",
-    title:
-      "Robotic cleaning deployed within a high-profile public museum.",
+    title: "Robotic cleaning in a major public museum.",
     body:
-      "Route design and operational configuration focused on public safety, visitor traffic and low-disruption cleaning.",
-    tags: ["Public Environment", "Route Design"],
+      "Route planning and operational configuration designed for public safety, visitor flow and low-disruption cleaning.",
+    tags: [
+      "Public Environment",
+      "Route Design",
+    ],
     featured: false,
   },
   {
     number: "03",
     industry: "HOSPITALITY",
     label: "HOTEL OPERATIONS",
-    title:
-      "Commercial robotics supporting premium hotel operations.",
+    title: "Commercial robotics for premium hotel operations.",
     body:
-      "Deployment planned around presentation standards, staff adoption, guest experience and repeatable daily workflows.",
-    tags: ["Hospitality", "Staff Training"],
+      "Deployment designed around presentation standards, staff adoption, guest experience and repeatable daily workflows.",
+    tags: [
+      "Hospitality",
+      "Staff Training",
+    ],
     featured: false,
   },
 ];
