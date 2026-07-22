@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Logo() {
   return (
@@ -13,9 +13,7 @@ export default function Logo() {
         alt="ERA Robotics"
         width={220}
         height={63}
-        sizes="220px"
         priority
-        fetchPriority="high"
         className="logo-image"
       />
     </Link>
