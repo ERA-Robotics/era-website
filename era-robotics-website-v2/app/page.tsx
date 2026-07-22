@@ -529,58 +529,64 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section-alt why-era-section">
-        <div className="shell">
-          <div className="why-era-layout">
-            <div className="why-era-intro">
-              <p className="kicker">WHY ERA</p>
+<section className="section why-era-section">
+  <div className="shell">
+    <div className="why-era-layout">
+      <div className="why-era-intro">
+        <p className="kicker">WHY ERA</p>
 
-              <h2>
-                Technology alone does not deliver operational value.
-              </h2>
+        <h2>
+          Operational success requires more than technology.
+        </h2>
 
-              <p className="why-era-lead">
-                Deployment does. Integration does. Support does.
-              </p>
+        <p className="why-era-statement">
+          Successful automation is engineered—not simply installed.
+        </p>
 
-              <p className="section-copy">
-                ERA approaches automation as an operational system—not a
-                standalone machine. We design around the environment,
-                workflow, people and operating requirements.
-              </p>
+        <p className="why-era-copy">
+          ERA approaches robotics as an operational system. We design around
+          the environment, workflow, people and operating requirements, then
+          support the deployment throughout its lifecycle.
+        </p>
 
-              <Link href="/about" className="text-link">
-                Learn about ERA
-                <span aria-hidden="true">↗</span>
-              </Link>
-            </div>
-
-            <div className="why-era-list">
-              {approachItems.map((item) => (
-                <article key={item.number}>
-                  <span className="why-era-number">
-                    {item.number}
-                  </span>
-
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="why-era-statement">
-            <span>ERA DIRECTION</span>
-
-            <p>
-              ERA Robotics is building the bridge between today&apos;s
-              commercial robotics and tomorrow&apos;s Physical AI systems.
-            </p>
-          </div>
+        <div className="why-era-flow" aria-label="ERA delivery approach">
+          <span>Technology</span>
+          <i aria-hidden="true">→</i>
+          <span>Deployment</span>
+          <i aria-hidden="true">→</i>
+          <span>Integration</span>
+          <i aria-hidden="true">→</i>
+          <span>Support</span>
         </div>
-      </section>
+
+        <Link href="/about" className="text-link why-era-link">
+          Our engineering approach
+          <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
+
+      <div className="why-era-principles">
+        {approachItems.map((item) => (
+          <article className="why-era-principle" key={item.number}>
+            <div className="why-era-principle-number">
+              {item.number}
+            </div>
+
+            <div className="why-era-principle-content">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </div>
+
+            <span
+              className="why-era-principle-marker"
+              aria-hidden="true"
+            />
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="section resources-section">
         <div className="shell">
