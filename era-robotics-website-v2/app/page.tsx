@@ -588,129 +588,174 @@ export default function Home() {
   </div>
 </section>
 
-      <section className="section resources-section">
-        <div className="shell">
-          <div className="section-heading-row">
-            <div>
-              <p className="kicker">RESOURCES</p>
+<section className="section resources-section">
+  <div className="shell">
+    <div className="section-heading-row resources-heading">
+      <div>
+        <p className="kicker">RESOURCES</p>
 
-              <h2>
-                Insights for deploying robotics in the real world.
-              </h2>
-            </div>
+        <h2>
+          Engineering insights for enterprise automation.
+        </h2>
+      </div>
 
-            <p className="section-copy">
-              Practical guidance on automation strategy, site readiness,
-              enterprise deployment and the evolution toward Physical AI.
-            </p>
-          </div>
+      <p className="section-copy">
+        Deployment guides, industry insights and technical perspectives for
+        organisations adopting robotics and Physical AI.
+      </p>
+    </div>
 
-          <div className="resources-grid">
-            <Link
-              href="/resources"
-              className="resource-card resource-large"
-            >
-              <div className="resource-top">
-                <span>GUIDE</span>
-                <span>01</span>
-              </div>
+    <div className="resources-layout">
+      <Link
+        href="/resources"
+        className="resource-feature"
+      >
+        <div className="resource-feature-top">
+          <span>GUIDE</span>
+          <span>12 MIN READ</span>
+        </div>
 
-              <div
-                className="resource-pattern"
-                aria-hidden="true"
-              >
-                <span />
-                <span />
-                <span />
-              </div>
+        <div
+          className="resource-document-visual"
+          aria-hidden="true"
+        >
+          <div className="resource-document-grid" />
 
-              <div className="resource-content">
-                <p className="resource-category">
-                  DEPLOYMENT GUIDE
-                </p>
+          <span className="resource-document-line resource-line-one" />
+          <span className="resource-document-line resource-line-two" />
+          <span className="resource-document-line resource-line-three" />
 
-                <h3>
-                  Preparing commercial facilities for autonomous robotics.
-                </h3>
+          <span className="resource-document-node resource-node-one" />
+          <span className="resource-document-node resource-node-two" />
 
-                <p>
-                  Site readiness, infrastructure, workflows, safety
-                  considerations and successful enterprise deployment.
-                </p>
-              </div>
+          <span className="resource-document-index">01</span>
+        </div>
 
-              <span
-                className="resource-arrow"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
-            </Link>
+        <div className="resource-feature-content">
+          <p className="resource-category">
+            ENTERPRISE DEPLOYMENT
+          </p>
 
-            <Link href="/resources" className="resource-card">
-              <div className="resource-top">
-                <span>BRIEF</span>
-                <span>02</span>
-              </div>
+          <h3>
+            Preparing commercial facilities for autonomous robotics.
+          </h3>
 
-              <div className="resource-content">
-                <p className="resource-category">
-                  INDUSTRY INSIGHT
-                </p>
+          <p className="resource-description">
+            A practical guide to site readiness, infrastructure, workflows,
+            safety planning and successful enterprise deployment.
+          </p>
 
-                <h3>
-                  Choosing the right robotics system for enterprise
-                  operations.
-                </h3>
-
-                <p>
-                  Evaluation criteria beyond hardware specifications.
-                </p>
-              </div>
-
-              <span
-                className="resource-arrow"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
-            </Link>
-
-            <Link href="/resources" className="resource-card">
-              <div className="resource-top">
-                <span>ARTICLE</span>
-                <span>03</span>
-              </div>
-
-              <div className="resource-content">
-                <p className="resource-category">PHYSICAL AI</p>
-
-                <h3>
-                  From commercial robotics to intelligent physical systems.
-                </h3>
-
-                <p>
-                  Understanding the next evolution of enterprise automation.
-                </p>
-              </div>
-
-              <span
-                className="resource-arrow"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
-            </Link>
-          </div>
-
-          <div className="resources-footer">
-            <Link href="/resources" className="text-link">
-              Explore all resources
-              <span aria-hidden="true">↗</span>
-            </Link>
+          <div className="resource-tags">
+            <span>Site Readiness</span>
+            <span>Workflow Planning</span>
+            <span>Safety</span>
           </div>
         </div>
-      </section>
-    </main>
-  );
-}
+
+        <span
+          className="resource-arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
+      </Link>
+
+      <div className="resource-editorial">
+        <div className="resource-editorial-heading">
+          <p>LATEST INSIGHTS</p>
+          <span>02</span>
+        </div>
+
+        <div className="resource-editorial-list">
+          <Link
+            href="/resources"
+            className="resource-editorial-item"
+          >
+            <div className="resource-editorial-meta">
+              <span>02</span>
+              <span>BRIEF</span>
+              <span>6 MIN READ</span>
+            </div>
+
+            <div className="resource-editorial-content">
+              <p className="resource-category">
+                INDUSTRY INSIGHT
+              </p>
+
+              <h3>
+                Choosing the right robotics system for enterprise operations.
+              </h3>
+
+              <p>
+                Evaluation criteria that extend beyond hardware
+                specifications and headline performance.
+              </p>
+
+              <div className="resource-editorial-tags">
+                <span>System Selection</span>
+                <span>Operations</span>
+              </div>
+            </div>
+
+            <span
+              className="resource-editorial-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+          </Link>
+
+          <Link
+            href="/resources"
+            className="resource-editorial-item"
+          >
+            <div className="resource-editorial-meta">
+              <span>03</span>
+              <span>ARTICLE</span>
+              <span>8 MIN READ</span>
+            </div>
+
+            <div className="resource-editorial-content">
+              <p className="resource-category">
+                PHYSICAL AI
+              </p>
+
+              <h3>
+                From commercial robotics to intelligent physical systems.
+              </h3>
+
+              <p>
+                Understanding how enterprise automation is evolving toward
+                perception, intelligence and adaptive physical systems.
+              </p>
+
+              <div className="resource-editorial-tags">
+                <span>Physical AI</span>
+                <span>Edge Intelligence</span>
+              </div>
+            </div>
+
+            <span
+              className="resource-editorial-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+          </Link>
+        </div>
+
+        <div className="resource-editorial-footer">
+          <p>
+            Practical thinking for teams evaluating, deploying and scaling
+            enterprise robotics.
+          </p>
+
+          <Link href="/resources" className="text-link">
+            View all resources
+            <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
