@@ -8494,3 +8494,237 @@ main {
     margin-bottom: 36px;
   }
 }
+/* =========================================================
+   About — Our Approach
+   ========================================================= */
+
+.approach-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.approach-section::before {
+  position: absolute;
+  top: 12%;
+  left: -180px;
+  width: 440px;
+  height: 440px;
+  content: "";
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(75, 110, 255, 0.08),
+    transparent 70%
+  );
+}
+
+.approach-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(70px, 10vw, 150px);
+  align-items: start;
+}
+
+.approach-intro {
+  position: sticky;
+  top: 130px;
+}
+
+.approach-intro .kicker {
+  margin-bottom: 25px;
+}
+
+.approach-intro h2 {
+  max-width: 620px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(3rem, 5.5vw, 5.8rem);
+  font-weight: 560;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.approach-lead {
+  max-width: 600px;
+  margin: 34px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(1.08rem, 1.6vw, 1.28rem);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.approach-copy {
+  max-width: 590px;
+  margin: 22px 0 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+.approach-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  align-items: center;
+  margin-top: 36px;
+}
+
+.approach-flow span {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.025);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.76rem;
+  font-weight: 650;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.approach-flow i {
+  color: rgba(124, 153, 255, 0.7);
+  font-style: normal;
+  font-size: 0.9rem;
+}
+
+.approach-principles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.approach-card {
+  min-height: 290px;
+  padding: clamp(28px, 3vw, 42px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    );
+  transition:
+    background 220ms ease,
+    transform 220ms ease;
+}
+
+.approach-card:hover {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(77, 108, 220, 0.11),
+      rgba(255, 255, 255, 0.02)
+    );
+}
+
+.approach-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 52px;
+}
+
+.approach-number {
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.8rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+}
+
+.approach-marker {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(115, 148, 255, 0.95);
+  box-shadow: 0 0 18px rgba(115, 148, 255, 0.45);
+}
+
+.approach-card h3 {
+  max-width: 340px;
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 560;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.approach-card p {
+  max-width: 380px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .approach-layout {
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    gap: 54px;
+  }
+
+  .approach-intro {
+    top: 105px;
+  }
+
+  .approach-card {
+    min-height: 270px;
+    padding: 28px;
+  }
+
+  .approach-card-top {
+    margin-bottom: 40px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  .approach-layout {
+    display: block;
+  }
+
+  .approach-intro {
+    position: static;
+    margin-bottom: 52px;
+  }
+
+  .approach-intro h2 {
+    font-size: clamp(2.7rem, 13vw, 4.4rem);
+  }
+
+  .approach-lead {
+    margin-top: 27px;
+    font-size: 1.02rem;
+  }
+
+  .approach-flow {
+    margin-top: 29px;
+  }
+
+  .approach-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .approach-card {
+    min-height: auto;
+    padding: 28px 24px 32px;
+  }
+
+  .approach-card-top {
+    margin-bottom: 35px;
+  }
+
+  .approach-card h3 {
+    font-size: 1.6rem;
+  }
+}
