@@ -453,8 +453,7 @@ export default function Home() {
               <p className="kicker">PROOF IN THE FIELD</p>
 
               <h2>
-                Real-world deployments, presented without exposing customer
-                intelligence.
+                Real-world deployments shaped around operational requirements.
               </h2>
             </div>
 
