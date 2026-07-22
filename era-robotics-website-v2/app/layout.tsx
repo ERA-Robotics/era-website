@@ -1,32 +1,98 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const siteUrl = "https://erarobotics.ai";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
   title: {
-    default: "ERA Robotics | Physical AI & Intelligent Automation",
-    template: "%s | ERA Robotics"
+    default: "ERA Robotics | Commercial Robotics & Physical AI",
+    template: "%s | ERA Robotics",
   },
+
   description:
-    "ERA Robotics designs, integrates and deploys commercial robotics, Physical AI, edge computing and intelligent automation across Australia and New Zealand.",
-  metadataBase: new URL("https://erarobotics.ai"),
+    "ERA Robotics deploys commercial robotic systems across Australia and New Zealand while developing the next generation of Physical AI.",
+
+  applicationName: "ERA Robotics",
+
+  authors: [
+    {
+      name: "ERA Robotics",
+      url: siteUrl,
+    },
+  ],
+
+  creator: "ERA Robotics",
+  publisher: "ERA Robotics",
+
+  keywords: [
+    "commercial robotics",
+    "enterprise robotics",
+    "Physical AI",
+    "autonomous cleaning robots",
+    "service robots",
+    "warehouse robotics",
+    "robotics integration",
+    "Australia",
+    "New Zealand",
+  ],
+
+  alternates: {
+    canonical: "/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
   openGraph: {
-    title: "ERA Robotics",
-    description:
-      "Engineering intelligence for the physical world.",
-    url: "https://erarobotics.ai",
+    title: "ERA Robotics | Commercial Robotics & Physical AI",
+    description: "Engineering intelligence for the physical world.",
+    url: siteUrl,
     siteName: "ERA Robotics",
-    type: "website"
-  }
+    locale: "en_AU",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "ERA Robotics | Commercial Robotics & Physical AI",
+    description: "Engineering intelligence for the physical world.",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  category: "technology",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0a0f1c",
 };
 
 export default function RootLayout({
-  children
-}: Readonly<{ children: React.ReactNode }>) {
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en-AU">
+      <body className="site-body">
         <Header />
         {children}
         <Footer />
