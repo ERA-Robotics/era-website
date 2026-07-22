@@ -7495,3 +7495,130 @@ min-height:460px;
     font-size: 34px;
   }
 }
+/* =========================================
+   Homepage Roadmap — Final Refinement
+========================================= */
+
+.technology-roadmap {
+  grid-template-columns:
+    minmax(0, 1fr)
+    84px
+    minmax(0, 1fr)
+    84px
+    minmax(0, 1fr);
+}
+
+/* Reduce excessive vertical space */
+
+.roadmap-stage {
+  min-height: 520px;
+  padding: 30px;
+}
+
+.roadmap-stage-copy {
+  margin: 28px 0 30px;
+}
+
+/* Let capability lists sit higher */
+
+.roadmap-capability-list {
+  margin-top: 80px;
+}
+
+/* Improve connector visibility */
+
+.roadmap-connector {
+  position: relative;
+  padding: 0 10px;
+  color: rgba(147, 205, 232, 0.82);
+  font-size: 20px;
+}
+
+.roadmap-connector span:first-child,
+.roadmap-connector span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(112, 179, 211, 0.1),
+    rgba(124, 202, 238, 0.72)
+  );
+}
+
+.roadmap-connector span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(124, 202, 238, 0.72),
+    rgba(112, 179, 211, 0.1)
+  );
+}
+
+/* Slightly reduce future core */
+
+.roadmap-future-core {
+  width: min(88%, 300px);
+  margin: 28px auto 28px;
+}
+
+/* Make final stage content balance with first two */
+
+.roadmap-stage-future {
+  justify-content: flex-start;
+}
+
+.roadmap-future-tags {
+  margin-top: auto;
+}
+
+/* Tighten capability rows */
+
+.roadmap-capability {
+  padding: 20px 0;
+}
+
+.roadmap-capability h4 {
+  font-size: 18px;
+}
+
+.roadmap-capability p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Tablet */
+
+@media (max-width: 1120px) {
+  .technology-roadmap {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap-stage {
+    min-height: auto;
+  }
+
+  .roadmap-capability-list {
+    margin-top: 38px;
+  }
+
+  .roadmap-connector {
+    min-height: 66px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  .roadmap-stage {
+    padding: 24px;
+  }
+
+  .roadmap-stage-copy {
+    margin: 24px 0 26px;
+  }
+
+  .roadmap-capability-list {
+    margin-top: 30px;
+  }
+
+  .roadmap-future-core {
+    width: min(88vw, 280px);
+  }
+}
