@@ -1,3 +1,4 @@
+import CapabilitiesShowcase from "@/components/CapabilitiesShowcase";
 import IndustriesShowcase from "@/components/IndustriesShowcase";
 import Link from "next/link";
 
@@ -254,56 +255,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section solutions-section">
-        <div className="shell">
-          <div className="section-heading-row">
-            <div>
-              <p className="kicker">WHAT WE DELIVER</p>
-
-              <h2>Five capabilities. One integrated approach.</h2>
-            </div>
-
-            <p className="section-copy">
-              ERA delivers commercial robotics and deployment integration
-              today, while developing the Physical AI, edge intelligence and
-              computer vision capabilities that will shape connected robotic
-              operations tomorrow.
-            </p>
-          </div>
-
-          <div className="solutions-grid">
-            {solutions.map((solution, index) => (
-              <Link
-                href={solution.href}
-                className={`solution-card solution-card-${index + 1}`}
-                key={solution.title}
-              >
-                <div className="solution-card-top">
-                  <span className="solution-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <span className="solution-arrow" aria-hidden="true">
-                    ↗
-                  </span>
-                </div>
-
-                <div className="solution-visual" aria-hidden="true">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-
-                <div className="solution-card-copy">
-                  <p className="solution-card-status">{solution.status}</p>
-                  <h3>{solution.title}</h3>
-                  <p>{solution.body}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+    <CapabilitiesShowcase />
 
 <IndustriesShowcase />
 
