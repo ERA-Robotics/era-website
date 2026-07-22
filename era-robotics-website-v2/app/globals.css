@@ -7622,3 +7622,63 @@ min-height:460px;
     width: min(88vw, 280px);
   }
 }
+/* =========================================
+   Homepage Roadmap — Final Balance
+========================================= */
+
+.roadmap-stage {
+  min-height: 470px;
+}
+
+.roadmap-stage-copy {
+  margin: 24px 0 22px;
+}
+
+.roadmap-capability-list {
+  margin-top: 52px;
+}
+
+.roadmap-capability {
+  padding: 18px 0;
+}
+
+.roadmap-future-core {
+  width: min(76%, 260px);
+  margin: 18px auto 18px;
+}
+
+.roadmap-core-content strong {
+  font-size: 20px;
+}
+
+.roadmap-core-content p {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.roadmap-future-tags {
+  margin-top: 12px;
+}
+
+.roadmap-future-tags span {
+  padding: 7px 9px;
+  font-size: 10px;
+}
+
+.roadmap-stage-future {
+  justify-content: flex-start;
+}
+
+@media (max-width: 1120px) {
+  .roadmap-stage {
+    min-height: auto;
+  }
+
+  .roadmap-capability-list {
+    margin-top: 32px;
+  }
+
+  .roadmap-future-core {
+    width: min(72vw, 260px);
+  }
+}
