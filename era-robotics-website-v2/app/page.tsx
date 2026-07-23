@@ -1,591 +1,361 @@
-import CapabilitiesShowcase from "@/components/CapabilitiesShowcase";
-import IndustriesShowcase from "@/components/IndustriesShowcase";
+import Image from "next/image";
 import Link from "next/link";
+import styles from "./home.module.css";
 
-const deployments = [
+const capabilities = [
   {
     number: "01",
-    industry: "MANUFACTURING",
-    label: "CONTROLLED OPERATING ENVIRONMENT",
-    title: "Autonomous cleaning for pharmaceutical manufacturing.",
-    body:
-      "Configured around controlled production areas, floor conditions, safety requirements and reliable daily operation.",
-    tags: ["Autonomous Cleaning", "Site Configuration", "Operational Support"],
-    featured: true,
+    title: "Autonomous cleaning",
+    body: "Robotic floor care for commercial, industrial and public environments—from daily cleaning to large-area autonomous operation.",
+    href: "/products",
   },
   {
     number: "02",
-    industry: "PUBLIC FACILITIES",
-    label: "VISITOR ENVIRONMENT",
-    title: "Robotic cleaning in a major public museum.",
-    body:
-      "Route planning and operational settings designed for visitor flow, public safety and low-disruption cleaning.",
-    tags: ["Public Environment", "Route Design"],
-    featured: false,
+    title: "Service delivery",
+    body: "Reliable delivery and guest-service robotics designed around the movement of people, goods and information.",
+    href: "/products",
   },
   {
     number: "03",
-    industry: "HOSPITALITY",
-    label: "HOTEL OPERATIONS",
-    title: "Commercial robotics for premium hotel operations.",
-    body:
-      "Deployment shaped around presentation standards, staff adoption, guest experience and repeatable workflows.",
-    tags: ["Hospitality", "Staff Training"],
-    featured: false,
-  },
-];
-
-const approachItems = [
-  {
-    number: "01",
-    title: "Enterprise-first",
-    body:
-      "We begin with the workflow, business requirements and site constraints before selecting technology.",
-  },
-  {
-    number: "02",
-    title: "Integration-led",
-    body:
-      "Robotics must work safely with people, equipment and existing operational processes.",
-  },
-  {
-    number: "03",
-    title: "Local deployment capability",
-    body:
-      "Assessment, commissioning, staff training and lifecycle support across Australia and New Zealand.",
+    title: "Industrial logistics",
+    body: "Autonomous material movement and workflow automation for warehouses, factories and complex operational sites.",
+    href: "/solutions",
   },
   {
     number: "04",
-    title: "Future-ready direction",
-    body:
-      "Deployments designed to evolve toward edge intelligence, computer vision and Physical AI.",
+    title: "Deployment & support",
+    body: "Local assessment, mapping, commissioning, operator training and lifecycle support across Australia and New Zealand.",
+    href: "/solutions",
   },
 ];
 
-const resources = [
+const products = [
   {
-    type: "GUIDE",
-    readTime: "12 MIN READ",
-    category: "ENTERPRISE DEPLOYMENT",
-    title: "Preparing commercial facilities for autonomous robotics.",
-    body:
-      "A practical guide to site readiness, infrastructure, workflows, safety planning and enterprise deployment.",
-    tags: ["Site Readiness", "Workflow Planning", "Safety"],
-    featured: true,
+    name: "CC1 Pro",
+    category: "Autonomous cleaning",
+    description: "AI-powered commercial floor cleaning for complex and high-traffic environments.",
+    image: "/products/cc1-pro.png",
+    imageClass: styles.productImageCc1Pro,
   },
   {
-    type: "BRIEF",
-    readTime: "6 MIN READ",
-    category: "INDUSTRY INSIGHT",
-    title: "Choosing the right robotics system for enterprise operations.",
-    body:
-      "Evaluation criteria that extend beyond hardware specifications and headline performance.",
-    tags: ["System Selection", "Operations"],
-    featured: false,
+    name: "MT1 Vac",
+    category: "Large-area vacuuming",
+    description: "Autonomous vacuuming built for expansive carpeted and mixed-use commercial spaces.",
+    image: "/products/mt1-vac.png",
+    imageClass: styles.productImageStandard,
   },
   {
-    type: "ARTICLE",
-    readTime: "8 MIN READ",
-    category: "PHYSICAL AI",
-    title: "From commercial robotics to intelligent physical systems.",
-    body:
-      "How enterprise automation is evolving toward perception, intelligence and adaptive physical systems.",
-    tags: ["Physical AI", "Edge Intelligence"],
-    featured: false,
+    name: "BellaBot Pro",
+    category: "Service delivery",
+    description: "Intelligent service delivery for hospitality, food service and customer-facing operations.",
+    image: "/products/bellabot-pro.png",
+    imageClass: styles.productImageStandard,
+  },
+  {
+    name: "T300",
+    category: "Industrial logistics",
+    description: "Autonomous material transport for manufacturing, warehousing and internal logistics.",
+    image: "/products/t300.png",
+    imageClass: styles.productImageStandard,
+  },
+];
+
+const deployments = [
+  {
+    industry: "Pharmaceutical manufacturing",
+    title: "Autonomous cleaning in a controlled production environment.",
+    body: "Site configuration shaped around floor conditions, safety requirements, production workflows and repeatable daily operation.",
+    tags: ["Controlled environment", "Autonomous cleaning", "Local support"],
+  },
+  {
+    industry: "Public facilities",
+    title: "Low-disruption robotic cleaning for visitor environments.",
+    body: "Route planning and operating settings designed around public safety, visitor flow and extended operating hours.",
+    tags: ["Public environment", "Route design", "Operational planning"],
+  },
+  {
+    industry: "Hospitality",
+    title: "Commercial robotics for premium hotel operations.",
+    body: "Deployment designed around presentation standards, guest experience, staff adoption and reliable cleaning routines.",
+    tags: ["Hospitality", "Staff training", "Workflow design"],
+  },
+];
+
+const deliverySteps = [
+  {
+    number: "01",
+    title: "Assess",
+    body: "We examine the site, workflow, surfaces, traffic patterns, safety requirements and operational goals.",
+  },
+  {
+    number: "02",
+    title: "Design",
+    body: "We select and configure the right system around the environment—not the other way around.",
+  },
+  {
+    number: "03",
+    title: "Deploy",
+    body: "Our team maps, commissions, tests and trains operators for reliable day-to-day use.",
+  },
+  {
+    number: "04",
+    title: "Support",
+    body: "We provide local technical support, optimisation and lifecycle assistance after go-live.",
   },
 ];
 
 export default function Home() {
   return (
-    <main>
-      <section className="hero">
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-hidden="true"
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <div className={styles.heroGlow} aria-hidden="true" />
+        <div className={styles.container}>
+          <div className={styles.heroGrid}>
+            <div className={styles.heroCopy}>
+              <p className={styles.eyebrow}>COMMERCIAL ROBOTICS · AUSTRALIA & NEW ZEALAND</p>
+              <h1>Intelligent robotics, engineered for real operations.</h1>
+              <p className={styles.heroText}>
+                ERA Robotics deploys autonomous cleaning, service delivery and industrial robotics with local assessment,
+                commissioning, training and lifecycle support.
+              </p>
+              <div className={styles.heroActions}>
+                <Link className={styles.primaryButton} href="/contact">
+                  Book a site assessment <span aria-hidden="true">↗</span>
+                </Link>
+                <Link className={styles.secondaryButton} href="/products">
+                  Explore our robotics
+                </Link>
+              </div>
+              <div className={styles.heroCategories} aria-label="ERA Robotics solution categories">
+                <span>Autonomous Cleaning</span>
+                <span>Service Delivery</span>
+                <span>Industrial Logistics</span>
+                <span>Physical AI</span>
+              </div>
+            </div>
 
-        <div className="hero-shade" aria-hidden="true" />
-
-        <div className="shell hero-content">
-          <p className="kicker">
-            COMMERCIAL ROBOTICS · DEPLOYMENT · PHYSICAL AI
-          </p>
-
-          <h1>Engineering Intelligence for the Physical World.</h1>
-
-          <p className="hero-subtitle">
-            ERA Robotics deploys commercial robotic systems across Australia
-            and New Zealand while building toward the future of Physical AI.
-          </p>
-
-          <div className="button-row">
-            <Link href="/solutions" className="pill pill-light">
-              Explore Solutions
-            </Link>
-
-            <Link href="/contact" className="pill pill-outline">
-              Talk to ERA
-            </Link>
+            <div className={styles.heroVisual}>
+              <div className={styles.heroVisualFrame}>
+                <div className={styles.visualLabel}>FEATURED SYSTEM</div>
+                <Image
+                  className={styles.heroRobot}
+                  src="/products/cc1-pro.png"
+                  alt="PUDU CC1 Pro commercial cleaning robot"
+                  width={900}
+                  height={900}
+                  priority
+                />
+                <div className={styles.visualInfo}>
+                  <div>
+                    <span>01</span>
+                    <strong>CC1 Pro</strong>
+                  </div>
+                  <p>Commercial cleaning intelligence for complex environments.</p>
+                </div>
+              </div>
+              <div className={styles.statusCard}>
+                <span className={styles.statusDot} />
+                <div>
+                  <strong>Local deployment capability</strong>
+                  <span>Australia + New Zealand</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section trusted">
-        <div className="shell">
-          <p className="kicker">ENTERPRISE EXPERIENCE</p>
-
-          <h2>Proven in complex, real-world operating environments.</h2>
-
-          <p className="section-copy wide">
-            From site assessment and solution design to deployment, training
-            and lifecycle support across Australia and New Zealand.
-          </p>
-
-          <div className="experience-grid">
-            <article>
-              <span className="experience-number">AU + NZ</span>
-              <h3>Regional capability</h3>
-              <p>
-                Local deployment and support for enterprise operations across
-                both markets.
-              </p>
-            </article>
-
-            <article>
-              <span className="experience-number">Multi-site</span>
-              <h3>Scalable deployment</h3>
-              <p>
-                Structured rollout processes for individual facilities and
-                distributed portfolios.
-              </p>
-            </article>
-
-            <article>
-              <span className="experience-number">End-to-end</span>
-              <h3>Lifecycle delivery</h3>
-              <p>
-                Assessment, design, commissioning, training and ongoing
-                operational support.
-              </p>
-            </article>
-
-            <article>
-              <span className="experience-number">Cross-sector</span>
-              <h3>Operational experience</h3>
-              <p>
-                Experience across retail, healthcare, manufacturing,
-                hospitality and public environments.
-              </p>
-            </article>
+      <section className={styles.credibilityBar}>
+        <div className={`${styles.container} ${styles.credibilityGrid}`}>
+          <div>
+            <strong>AU + NZ</strong>
+            <span>Regional coverage</span>
           </div>
-
-          <p className="legal-note">
-            Selected project details and customer references are available
-            privately, subject to confidentiality obligations.
-          </p>
+          <div>
+            <strong>End-to-end</strong>
+            <span>Assessment to support</span>
+          </div>
+          <div>
+            <strong>Multi-sector</strong>
+            <span>Commercial and industrial</span>
+          </div>
+          <div>
+            <strong>Enterprise-ready</strong>
+            <span>Site-led deployment</span>
+          </div>
         </div>
       </section>
 
-      <CapabilitiesShowcase />
-
-      <IndustriesShowcase />
-
-      <section className="section physical-ai-section roadmap-section">
-        <div className="shell">
-          <div className="roadmap-heading">
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeading}>
             <div>
-              <p className="kicker">OUR DIRECTION</p>
-
-              <h2>
-                From commercial robotics to connected physical intelligence.
-              </h2>
+              <p className={styles.eyebrow}>WHAT WE DELIVER</p>
+              <h2>Robotics that fit the operation.</h2>
             </div>
-
-            <div>
-              <p className="section-copy">
-                ERA deploys practical robotic systems today while developing
-                the perception, edge intelligence and workflow capabilities
-                required for more adaptive physical operations.
-              </p>
-
-              <Link href="/solutions#physical-ai" className="text-link">
-                Explore the Physical AI direction
-                <span aria-hidden="true">↗</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="technology-roadmap">
-            <article className="roadmap-stage roadmap-stage-current">
-              <div className="roadmap-stage-header">
-                <span className="roadmap-stage-number">01</span>
-
-                <div>
-                  <p className="roadmap-stage-label">TODAY</p>
-                  <h3>Practical deployment</h3>
-                </div>
-              </div>
-
-              <p className="roadmap-stage-copy">
-                Commercial robotic systems deployed into real operating
-                environments with local commissioning and support.
-              </p>
-
-              <div className="roadmap-capability-list">
-                <div className="roadmap-capability">
-                  <span>01</span>
-
-                  <div>
-                    <h4>Commercial Robotics</h4>
-                    <p>
-                      Cleaning, service delivery and material-movement systems
-                      for commercial and industrial operations.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="roadmap-capability">
-                  <span>02</span>
-
-                  <div>
-                    <h4>Deployment &amp; Integration</h4>
-                    <p>
-                      Assessment, workflow design, mapping, commissioning,
-                      training and ongoing support.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <div className="roadmap-connector" aria-hidden="true">
-              <span />
-              <span>→</span>
-              <span />
-            </div>
-
-            <article className="roadmap-stage roadmap-stage-developing">
-              <div className="roadmap-stage-header">
-                <span className="roadmap-stage-number">02</span>
-
-                <div>
-                  <p className="roadmap-stage-label">NOW DEVELOPING</p>
-                  <h3>Connected operations</h3>
-                </div>
-              </div>
-
-              <p className="roadmap-stage-copy">
-                Building capabilities that allow robotic systems to perceive,
-                process information locally and operate within connected
-                workflows.
-              </p>
-
-              <div className="roadmap-capability-list">
-                <div className="roadmap-capability">
-                  <span>03</span>
-
-                  <div>
-                    <h4>Computer Vision</h4>
-                    <p>
-                      Environmental awareness, visual detection and
-                      operational perception.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="roadmap-capability">
-                  <span>04</span>
-
-                  <div>
-                    <h4>Edge Intelligence</h4>
-                    <p>
-                      Local processing for faster and more resilient
-                      decision-making.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <div className="roadmap-connector" aria-hidden="true">
-              <span />
-              <span>→</span>
-              <span />
-            </div>
-
-            <article className="roadmap-stage roadmap-stage-future">
-              <div className="roadmap-stage-header">
-                <span className="roadmap-stage-number">03</span>
-
-                <div>
-                  <p className="roadmap-stage-label">FUTURE DIRECTION</p>
-                  <h3>Physical AI</h3>
-                </div>
-              </div>
-
-              <p className="roadmap-stage-copy">
-                A future operating model where perception, intelligence and
-                physical action function as one connected system.
-              </p>
-
-              <div className="roadmap-future-core">
-                <div
-                  className="roadmap-orbit roadmap-orbit-one"
-                  aria-hidden="true"
-                />
-                <div
-                  className="roadmap-orbit roadmap-orbit-two"
-                  aria-hidden="true"
-                />
-
-                <div className="roadmap-core-content">
-                  <span>ERA</span>
-                  <strong>Physical Intelligence</strong>
-                  <p>Perceive. Interpret. Act. Improve.</p>
-                </div>
-              </div>
-
-              <div className="roadmap-future-tags">
-                <span>Adaptive Operations</span>
-                <span>Connected Workflows</span>
-                <span>Local Intelligence</span>
-                <span>Continuous Improvement</span>
-              </div>
-            </article>
-          </div>
-
-          <div className="roadmap-statement">
             <p>
-              Today&apos;s commercial robotics.
-              <br />
-              Tomorrow&apos;s connected physical intelligence.
-            </p>
-
-            <span>
-              Built through practical deployment, local integration and
-              continuous development.
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <section className="section case-study-section">
-        <div className="shell">
-          <div className="section-heading-row">
-            <div>
-              <p className="kicker">PROOF IN THE FIELD</p>
-
-              <h2>
-                Real-world deployments shaped around operational requirements.
-              </h2>
-            </div>
-
-            <p className="section-copy">
-              Projects are presented by operating environment rather than
-              customer identity. Approved references are available privately.
+              We start with the environment, workflow and business requirement, then engineer the right robotic system around it.
             </p>
           </div>
 
-          <div className="case-study-grid">
-            {deployments.map((deployment) => (
-              <Link
-                href="/deployments"
-                className={`case-study-card${
-                  deployment.featured ? " case-study-feature" : ""
-                }`}
-                key={deployment.number}
-              >
-                <div className="case-study-top">
-                  <span>{deployment.number}</span>
-                  <span>{deployment.industry}</span>
+          <div className={styles.capabilityGrid}>
+            {capabilities.map((capability) => (
+              <Link className={styles.capabilityCard} href={capability.href} key={capability.number}>
+                <span className={styles.cardNumber}>{capability.number}</span>
+                <div>
+                  <h3>{capability.title}</h3>
+                  <p>{capability.body}</p>
                 </div>
-
-                {deployment.featured && (
-                  <div className="case-study-visual" aria-hidden="true">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                )}
-
-                <div className="case-study-copy">
-                  <p className="case-study-label">{deployment.label}</p>
-                  <h3>{deployment.title}</h3>
-                  <p>{deployment.body}</p>
-
-                  <div className="case-study-tags">
-                    {deployment.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                </div>
-
-                <span className="case-study-arrow" aria-hidden="true">
-                  ↗
-                </span>
+                <span className={styles.cardArrow} aria-hidden="true">↗</span>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="case-study-footer">
+      <section className={`${styles.section} ${styles.productSection}`}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeading}>
+            <div>
+              <p className={styles.eyebrow}>ROBOTICS PORTFOLIO</p>
+              <h2>Built for different operational challenges.</h2>
+            </div>
+            <Link className={styles.textLink} href="/products">
+              View all products <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+
+          <div className={styles.productGrid}>
+            {products.map((product) => (
+              <Link className={styles.productCard} href="/products" key={product.name}>
+                <div className={styles.productVisual}>
+                  <span>{product.category}</span>
+                  <Image
+                    className={product.imageClass}
+                    src={product.image}
+                    alt={`${product.name} robot`}
+                    width={640}
+                    height={640}
+                  />
+                </div>
+                <div className={styles.productCopy}>
+                  <h3>{product.name}</h3>
+                  <p>{product.description}</p>
+                  <span className={styles.exploreLabel}>Explore system ↗</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeading}>
+            <div>
+              <p className={styles.eyebrow}>PROOF IN THE FIELD</p>
+              <h2>Designed around real environments.</h2>
+            </div>
             <p>
-              Customer identities and site details are shared only where
-              disclosure has been approved.
+              Every deployment is shaped by the people, workflows and operating conditions already present on site.
             </p>
+          </div>
 
-            <Link href="/deployments" className="text-link">
-              Explore deployments
-              <span aria-hidden="true">↗</span>
+          <div className={styles.deploymentGrid}>
+            {deployments.map((deployment, index) => (
+              <article className={styles.deploymentCard} key={deployment.title}>
+                <div className={styles.deploymentTopline}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <span>{deployment.industry}</span>
+                </div>
+                <h3>{deployment.title}</h3>
+                <p>{deployment.body}</p>
+                <div className={styles.tagList}>
+                  {deployment.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className={styles.sectionFooterLink}>
+            <Link className={styles.textLink} href="/deployments">
+              Explore deployments <span aria-hidden="true">↗</span>
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="section why-era-section">
-        <div className="shell">
-          <div className="why-era-layout">
-            <div className="why-era-intro">
-              <p className="kicker">WHY ERA</p>
+      <section className={`${styles.section} ${styles.processSection}`}>
+        <div className={styles.container}>
+          <div className={styles.processIntro}>
+            <p className={styles.eyebrow}>THE ERA APPROACH</p>
+            <h2>Successful automation is engineered—not simply installed.</h2>
+            <p>
+              Hardware is only one part of the outcome. Our role is to turn robotics into a practical, supported operational system.
+            </p>
+            <Link className={styles.secondaryButton} href="/solutions">
+              Explore our approach
+            </Link>
+          </div>
 
-              <h2>Operational success requires more than technology.</h2>
+          <div className={styles.processGrid}>
+            {deliverySteps.map((step) => (
+              <article className={styles.processStep} key={step.number}>
+                <span>{step.number}</span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <p className="why-era-statement">
-                Successful automation is engineered—not simply installed.
+      <section className={styles.physicalAiSection}>
+        <div className={styles.container}>
+          <div className={styles.physicalAiGrid}>
+            <div>
+              <p className={styles.eyebrow}>OUR DIRECTION</p>
+              <h2>From commercial robotics to connected physical intelligence.</h2>
+            </div>
+            <div className={styles.physicalAiCopy}>
+              <p>
+                ERA deploys practical robotic systems today while developing the perception, edge intelligence and connected
+                workflow capabilities required for more adaptive physical operations.
               </p>
-
-              <p className="why-era-copy">
-                ERA designs around the environment, workflow, people and
-                operating requirements, then supports each deployment
-                throughout its lifecycle.
-              </p>
-
-              <div className="why-era-flow" aria-label="ERA delivery approach">
-                <span>Technology</span>
-                <i aria-hidden="true">→</i>
-                <span>Deployment</span>
-                <i aria-hidden="true">→</i>
-                <span>Integration</span>
-                <i aria-hidden="true">→</i>
-                <span>Support</span>
+              <div className={styles.aiPillRow}>
+                <span>Computer vision</span>
+                <span>Edge intelligence</span>
+                <span>Connected workflows</span>
+                <span>Physical AI</span>
               </div>
-
-              <Link href="/about" className="text-link why-era-link">
-                Our engineering approach
-                <span aria-hidden="true">↗</span>
+              <Link className={styles.textLink} href="/about">
+                Explore our direction <span aria-hidden="true">↗</span>
               </Link>
             </div>
-
-            <div className="why-era-principles">
-              {approachItems.map((item) => (
-                <article className="why-era-principle" key={item.number}>
-                  <div className="why-era-principle-number">
-                    {item.number}
-                  </div>
-
-                  <div className="why-era-principle-content">
-                    <h3>{item.title}</h3>
-                    <p>{item.body}</p>
-                  </div>
-
-                  <span
-                    className="why-era-principle-marker"
-                    aria-hidden="true"
-                  />
-                </article>
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="section resources-section">
-        <div className="shell">
-          <div className="section-heading-row resources-heading">
+      <section className={styles.ctaSection}>
+        <div className={styles.container}>
+          <div className={styles.ctaCard}>
             <div>
-              <p className="kicker">RESOURCES</p>
-
-              <h2>Engineering insights for enterprise automation.</h2>
+              <p className={styles.eyebrow}>START WITH THE OPERATION</p>
+              <h2>Let’s assess where robotics can create real value.</h2>
+              <p>
+                Tell us about your facility, current workflow and operational challenge. Our team will help identify the right next step.
+              </p>
             </div>
-
-            <p className="section-copy">
-              Practical guidance for organisations evaluating, deploying and
-              scaling robotics and Physical AI.
-            </p>
-          </div>
-
-          <div className="resources-grid">
-            {resources.map((resource, index) => {
-              const isFeatured = resource.featured;
-
-              return (
-                <Link
-                  href="/resources"
-                  className={`resource-card${
-                    isFeatured ? " resource-large" : ""
-                  }`}
-                  key={resource.title}
-                >
-                  <div className="resource-top">
-                    <span>{resource.type}</span>
-                    <span>{resource.readTime}</span>
-                  </div>
-
-                  {isFeatured && (
-                    <div className="resource-blueprint" aria-hidden="true">
-                      <div className="resource-blueprint-grid" />
-
-                      <span className="resource-blueprint-line resource-blueprint-line-one" />
-                      <span className="resource-blueprint-line resource-blueprint-line-two" />
-                      <span className="resource-blueprint-line resource-blueprint-line-three" />
-
-                      <span className="resource-blueprint-node resource-blueprint-node-one" />
-                      <span className="resource-blueprint-node resource-blueprint-node-two" />
-                      <span className="resource-blueprint-node resource-blueprint-node-three" />
-
-                      <span className="resource-blueprint-index">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="resource-content">
-                    <p className="resource-category">{resource.category}</p>
-                    <h3>{resource.title}</h3>
-
-                    <p className="resource-description">{resource.body}</p>
-
-                    <div className="resource-tags">
-                      {resource.tags.map((tag) => (
-                        <span key={tag}>{tag}</span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <span className="resource-arrow" aria-hidden="true">
-                    ↗
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-
-          <div className="resources-footer">
-            <p>
-              Practical thinking for teams evaluating, deploying and scaling
-              enterprise robotics.
-            </p>
-
-            <Link href="/resources" className="text-link">
-              View the resource library
-              <span aria-hidden="true">↗</span>
-            </Link>
+            <div className={styles.ctaActions}>
+              <Link className={styles.primaryButton} href="/contact">
+                Talk to ERA <span aria-hidden="true">↗</span>
+              </Link>
+              <Link className={styles.secondaryButton} href="/deployments">
+                View deployments
+              </Link>
+            </div>
           </div>
         </div>
       </section>
