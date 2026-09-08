@@ -92,6 +92,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-AU">
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-GBV2P1XP8P"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-GBV2P1XP8P');
+            `,
+          }}
+        />
+      </head>
       <body className="site-body">
         <Header />
         {children}
