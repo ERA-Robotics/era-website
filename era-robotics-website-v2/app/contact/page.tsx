@@ -17,13 +17,13 @@ export default function ContactPage() {
               and enterprise automation enquiries.
             </p>
             <div className="contact-meta">
-              <p><span>Email</span><a href="mailto:jake@erarobotics.ai">jake@erarobotics.ai</a></p>
+              <p><span>Email</span><a href="mailto:hello@erarobotics.ai">hello@erarobotics.ai</a></p>
               <p><span>Region</span>Australia &amp; New Zealand</p>
               <p><span>Company</span>ERA Robotics Pty Ltd</p>
             </div>
           </div>
 
-          <form className="contact-form" action="mailto:jake@erarobotics.ai" method="post" encType="text/plain">
+          <form className="contact-form" action="mailto:hello@erarobotics.ai" method="post" encType="text/plain">
             <label>Name<input name="name" required /></label>
             <label>Work email<input name="email" type="email" required /></label>
             <label>Organisation<input name="organisation" /></label>
